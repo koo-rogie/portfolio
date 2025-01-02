@@ -15,10 +15,23 @@
          @include flex();
          height: 100px;
 
+         @include res($m-size: $res-ipad) {
+            height: 80px;
+         }
+         @include res($m-size: $res-mobile-m) {
+            height: 60px;
+         }
+
          .logo {
             a {
                display: block;
                width: 80px;
+               @include res($m-size: $res-ipad) {
+                 width: 60px;
+               }
+               @include res($m-size: $res-mobile-m) {
+                 width: 40px;
+               }
             }
          }
 
@@ -47,12 +60,12 @@ footer {
 
    .inner {
       @include flex();
-      
+
       .foot-logo {
          width: 100px;
          padding: 20px;
       }
-      
+
       ul {
          @include flex($gap: 10px);
 

@@ -23,6 +23,7 @@
 }
 .main-wrap .inner .main-img {
   width: 500px;
+  height: auto;
   z-index: 2;
 }
 @media screen and (max-width: 1279px) {
@@ -32,6 +33,7 @@
 }
 @media screen and (max-width: 767px) {
   .main-wrap .inner .main-img {
+    width: 320px;
     height: 500px;
   }
 }
@@ -41,6 +43,11 @@
 @media screen and (max-width: 1279px) {
   .main-wrap .inner .main-img img {
     margin: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-wrap .inner .main-img img {
+    margin: 0;
   }
 }
 .main-wrap .inner::after {
@@ -59,6 +66,13 @@
   .main-wrap .inner::after {
     width: 450px;
     height: 450px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-wrap .inner::after {
+    left: 50px;
+    width: 300px;
+    height: 300px;
   }
 }
 .main-wrap .inner .text-box {

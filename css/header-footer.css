@@ -15,9 +15,29 @@
   gap: 0;
   height: 100px;
 }
+@media screen and (max-width: 1279px) {
+  .header-wrap header .inner {
+    height: 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-wrap header .inner {
+    height: 60px;
+  }
+}
 .header-wrap header .inner .logo a {
   display: block;
   width: 80px;
+}
+@media screen and (max-width: 1279px) {
+  .header-wrap header .inner .logo a {
+    width: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-wrap header .inner .logo a {
+    width: 40px;
+  }
 }
 .header-wrap header .inner .nav-list {
   display: flex;

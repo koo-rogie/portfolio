@@ -10,17 +10,22 @@
    .inner {
       @include flex();
       position: relative;
+
       @include res($m-size: $res-mobile-m) {
          flex-direction: column;
       }
+
       .main-img {
          width: 500px;
+         height: auto;
          z-index: 2;
 
          @include res($m-size: $res-ipad) {
             width: 400px;
          }
+
          @include res($m-size: $res-mobile-m) {
+            width: 320px;
             height: 500px;
          }
 
@@ -29,6 +34,10 @@
 
             @include res($m-size: $res-ipad) {
                margin: 20px;
+            }
+
+            @include res($m-size: $res-mobile-m) {
+               margin: 0;
             }
          }
 
@@ -47,6 +56,12 @@
          @include res($m-size: $res-ipad) {
             width: 450px;
             height: 450px;
+         }
+
+         @include res($m-size: $res-mobile-m) {
+            left: 50px;
+            width: 300px;
+            height: 300px;
          }
       }
 
