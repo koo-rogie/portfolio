@@ -15,8 +15,16 @@
          width: 500px;
          z-index: 2;
 
+         @include res($m-size: $res-ipad) {
+            width: 400px;
+         }
+
          img {
             margin: 50px;
+
+            @include res($m-size: $res-ipad) {
+               margin: 20px;
+            }
          }
 
       }
@@ -30,6 +38,10 @@
          height: 600px;
          @include border-r($b-r: 10000px);
          z-index: 0;
+         @include res($m-size: $res-ipad) {
+            width: 450px;
+            height: 450px;
+         }
       }
 
       .text-box {
@@ -38,26 +50,35 @@
          top: 25%;
          transform: translateY(-50%);
          padding-right: 100px;
-
+         @include res($m-size: $res-ipad) {
+            left: 450px;
+            padding-right: 0;
+         }
          .sub-title {
             @include font-s($size: 5em, $weigth: bold);
             margin-bottom: 100px;
+            @include res($m-size: $res-ipad) {
+              margin-bottom: 50px;
+            }
          }
 
          .text-title {
             @include font-s($size: 3em, $weigth: bold);
             position: relative;
             line-height: 2;
-            &::after{
+
+            &::after {
                @include a-b();
                width: 100%;
                height: 2px;
                background-color: $wh;
 
             }
-            &:last-child{
+
+            &:last-child {
                text-align: right;
-               &::after{
+
+               &::after {
                   display: none;
                }
             }
