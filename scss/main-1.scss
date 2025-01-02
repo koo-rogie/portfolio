@@ -10,13 +10,18 @@
    .inner {
       @include flex();
       position: relative;
-
+      @include res($m-size: $res-mobile-m) {
+         flex-direction: column;
+      }
       .main-img {
          width: 500px;
          z-index: 2;
 
          @include res($m-size: $res-ipad) {
             width: 400px;
+         }
+         @include res($m-size: $res-mobile-m) {
+            height: 500px;
          }
 
          img {
@@ -38,6 +43,7 @@
          height: 600px;
          @include border-r($b-r: 10000px);
          z-index: 0;
+
          @include res($m-size: $res-ipad) {
             width: 450px;
             height: 450px;
@@ -50,15 +56,22 @@
          top: 25%;
          transform: translateY(-50%);
          padding-right: 100px;
+
          @include res($m-size: $res-ipad) {
             left: 450px;
             padding-right: 0;
          }
+
+         @include res($m-size: $res-mobile-m) {
+            position: sticky;
+         }
+
          .sub-title {
             @include font-s($size: 5em, $weigth: bold);
             margin-bottom: 100px;
+
             @include res($m-size: $res-ipad) {
-              margin-bottom: 50px;
+               margin-bottom: 50px;
             }
          }
 
@@ -85,4 +98,6 @@
          }
       }
    }
+
+   @include img();
 }
