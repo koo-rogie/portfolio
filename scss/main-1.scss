@@ -1,0 +1,30 @@
+@use 'mixin' as *;
+@use 'color' as *;
+
+.main-wrap {
+   height: 100vh;
+   padding-top: 100px;
+   background-color: pink;
+   z-index: -1;
+
+   .inner {
+      position: relative;
+
+      .main-img {
+         width: 500px;
+
+         z-index: 2;
+
+      }
+
+      &::after {
+         @include a-b();
+         left: 0;
+         top: 0;
+         background-color: $wh;
+         width: 600px;
+         height: 600px;
+         z-index: 0;
+      }
+   }
+}

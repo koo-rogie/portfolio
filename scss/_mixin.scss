@@ -32,3 +32,9 @@
    border-top: 1px solid $color-b;
    border-bottom: 1px solid $color-b;
 }
+
+@mixin a-b(){
+   display: block;
+   position: absolute;
+   content: "";
+}
