@@ -7,15 +7,16 @@
    top: 0;
    width: 100%;
    z-index: 1000;
-   
+
    header {
       height: 100%;
+
       .inner {
          @include flex();
          height: 100px;
 
          .logo {
-            a{
+            a {
                display: block;
                width: 80px;
             }
@@ -23,16 +24,42 @@
 
          .nav-list {
             @include flex($gap: 10px);
-            li{
-               a{
-                  @include font-s($size:$font-small);
+
+            li {
+               a {
+                  @include font-s($size: $font-small);
                   padding: 10px;
                   transition: 0.2s;
-                  &:hover{
+
+                  &:hover {
                      background-color: skyblue;
                      @include border-r();
                   }
                }
+            }
+         }
+      }
+   }
+}
+
+footer {
+   background-color: $bk;
+
+   .inner {
+      @include flex();
+      
+      .foot-logo {
+         width: 100px;
+         padding: 20px;
+      }
+      
+      ul {
+         @include flex($gap: 10px);
+
+         li {
+
+            a {
+               @include font-s($color: $wh);
             }
          }
       }
