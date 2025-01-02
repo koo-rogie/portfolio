@@ -1,0 +1,471 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+html,
+body {
+   position: relative;
+   height: 100%;
+}
+
+body {
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+.main-contant {
+   .swiper {
+      width: 100%;
+      height: 100%;
+   }
+
+   .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+   }
+
+   .swiper-slide img {
+      @include img-box();
+   }
+}
+
+.main-contant {
+   height: calc(100vh - 100px);
+
+   @include res($m-size: $res-ipad) {
+      height: calc(100vh - 80px);
+   }
+
+   @include res($m-size: $res-mobile) {
+      height: auto;
+      flex-wrap: wrap;
+   }
+
+   .inner {
+      @include flex($gap: 10px);
+      height: 100%;
+
+      @include res($m-size: $res-mobile) {
+         align-items: flex-start;
+         height: 100%;
+         flex-wrap: wrap;
+         margin-top: 10px;
+      }
+
+      >div {
+         width: 50%;
+
+         @include res($m-size: $res-ipad) {}
+
+         @include res($m-size: $res-mobile) {
+            width: 100%;
+         }
+      }
+
+      >.text-box {
+         @include flex-cal($gap: 30px);
+         margin-left: 30px;
+
+         @include res($m-size: $res-ipad) {}
+
+         @include res($m-size: $res-mobile) {
+            margin-left: 0px;
+            gap: 10px;
+         }
+
+         .title-box {
+            span {
+               display: block;
+               width: 40px;
+               height: 40px;
+               background: url(../images/01-main/main-icon-1.svg) no-repeat center center;
+
+               @include res($m-size: $res-mobile) {
+                  display: none;
+               }
+
+            }
+         }
+
+         form {
+            @include flex($gap: 20px);
+            width: 100%;
+            @include border-r();
+            border: 1px solid black;
+            padding: 10px 20px;
+
+            input {
+               padding: 10px 20px;
+               width: 100%;
+            }
+
+            button {
+               width: 32px;
+               height: 32px;
+               background: url(../images/03-icon/search.svg) no-repeat center center;
+            }
+         }
+
+         .main-buttom-list {
+            @include flex($space-between: flex-start, $gap: 20px);
+
+            @include res($m-size: $res-ipad) {
+               flex-wrap: wrap;
+            }
+
+            @include res($m-size: $res-mobile) {
+               gap: 5px;
+            }
+
+            li {
+               a {
+                  @include font-s();
+                  @include border();
+                  @include border-r();
+                  padding: 10px 20px;
+
+                  &:hover {
+                     @include hover-back();
+                  }
+               }
+            }
+         }
+
+         .main-p-wrap {
+            @include flex($gap: 40px);
+
+            @include res($m-size: $res-ipad) {
+               @include flex($space-between: flex-start);
+               flex-wrap: wrap;
+            }
+
+            @include res($m-size: $res-mobile) {
+               justify-content: center;
+            }
+
+            .sub-title {
+               span {
+                  display: block;
+
+                  &:first-child {
+                     @include font-s($size: $font-small, $weigth: bold, $color: $main-color-r);
+                  }
+
+                  &:last-child {
+                     @include font-s($color: $g555);
+                  }
+                  @include res($m-size: $res-mobile) {
+                     text-align: center;
+                  }
+               }
+            }
+
+            .main-p-list {
+               @include flex($gap: 40px);
+
+               @include res($m-size: $res-ipad) {}
+
+
+
+               li {
+                  a {
+                     @include flex-cal($center: center);
+                     padding: 10px;
+                     position: relative;
+                     overflow: hidden;
+
+                     .img-box {
+                        width: 100px;
+
+                        @include res($m-size: $res-ipad) {
+                           width: 80px;
+                        }
+
+                        @include res($m-size: $res-mobile) {
+                           width: 50px;
+                        }
+
+                     }
+
+                     .text-box {
+                        span {
+                           @include font-s($size: $font-small, $weigth: bold);
+                           line-height: 2;
+                        }
+                     }
+
+                     &::before {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 0;
+                        z-index: -1;
+                        transition: 0.5s;
+                        background-color: $main-color-y;
+                     }
+
+                     &:hover {
+                        &::before {
+                           height: 30px;
+                        }
+                     }
+                  }
+
+                  &:first-child {
+                     a {
+
+
+                        &::before {
+                           background-color: $main-color-y;
+
+                        }
+                     }
+                  }
+
+                  &:nth-child(2) {
+                     a {
+
+                        &::before {
+                           background-color: $main-color-g;
+
+                        }
+                     }
+                  }
+
+                  &:last-child {
+                     a {
+                        &::before {
+                           background-color: $main-color-r;
+
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      >.img-box {
+         @include flex-cal();
+         position: relative;
+
+         &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: url(../images/01-main/main-icon-2.svg) no-repeat center center;
+            width: 50px;
+            height: 50px;
+            left: 0;
+            top: 0;
+         }
+
+         @keyframes expandShrink {
+            0% {
+               transform: scaleX(1);
+            }
+
+            50% {
+               transform: scaleX(0.8);
+            }
+
+            100% {
+               transform: scaleX(1);
+
+            }
+         }
+
+
+         &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: $main-color-r;
+            width: 341px;
+            height: 298px;
+            top: -60px;
+            left: -100px;
+            transform: translateY(-50%);
+            border-radius: 66% 54% 58% 72%;
+            animation: expandShrink 6s infinite alternate ease-in-out;
+            z-index: -1;
+
+            @include res($m-size: $res-mobile) {
+               display: none;
+            }
+         }
+
+         .main-img-list {
+            width: 80%;
+            height: 500px;
+            margin-bottom: 50px;
+
+            @include res($m-size: 1020px) {
+               height: 300px;
+               margin-bottom: 10px;
+            }
+
+            @include res($m-size: $res-mobile) {
+               height: 150px;
+            }
+
+            .swiper-pagination-bullet-active {
+               background: $main-color-r;
+            }
+         }
+
+         .img-box-list {
+            width: 100%;
+            @include flex($center: flex-end);
+            position: relative;
+
+            @include res($m-size: 1020px) {
+               gap: 10px;
+               flex-wrap: wrap;
+            }
+
+            &::before {
+               position: absolute;
+               content: "";
+               display: block;
+               width: 100px;
+               height: 100px;
+               left: 0;
+               top: -5%;
+               transform: translate(-50%, -50%);
+               background: url(../images/01-main/main-icon-3.png) no-repeat center center;
+               background-size: 120%;
+               z-index: 10;
+
+               @include res($m-size: $res-ipad) {
+                  left: 10px;
+               }
+
+               @include res($m-size: $res-mobile) {
+                  left: 20px;
+                  background-size: 90%;
+               }
+            }
+
+            li {
+               padding: 50px;
+               background-color: $main-color-g;
+               @include border-r();
+               position: relative;
+               overflow: hidden;
+               z-index: 0;
+
+               @include res($m-size: $res-ipad) {
+                  padding: 30px;
+               }
+
+               @include res($m-size: 1020px) {
+                  width: 45%;
+               }
+
+               @include res($m-size: $res-mobile) {
+                  padding: 10px;
+               }
+
+               &::before {
+                  position: absolute;
+                  display: block;
+                  content: '';
+                  width: calc(100% - 10px);
+                  height: calc(100% - 10px);
+                  @include border-r();
+                  bottom: -100%;
+                  left: 5px;
+                  transition: 0.4s;
+                  z-index: 1;
+                  background-color: #fff;
+               }
+
+               a {
+                  display: block;
+                  position: relative;
+                  z-index: 2;
+
+                  span {
+                     position: relative;
+                     display: block;
+                     padding: 10px 0;
+                     z-index: 2;
+
+                     &:first-child {
+                        @include font-s($size: $font-small, $weigth: bold, $color: $wh);
+                     }
+                  }
+               }
+
+               &:first-child {
+                  background-color: $main-color-r;
+
+                  span {
+                     color: $wh;
+                  }
+               }
+
+               &:nth-child(2) {
+                  background-color: $main-color-g;
+
+                  span {
+                     color: $wh;
+                  }
+               }
+
+               &:nth-child(3) {
+                  background-color: $main-color-g;
+
+                  a {
+                     display: inline-block;
+                     color: $wh;
+
+                  }
+               }
+
+               &:last-child {
+                  background-color: $main-color-y;
+               }
+
+               &:hover {
+                  &::before {
+                     bottom: 5px;
+                  }
+
+                  &:first-child {
+                     span {
+                        color: $bk;
+                     }
+                  }
+
+                  &:nth-child(2) {
+                     span {
+                        color: $bk;
+                     }
+                  }
+
+                  &:nth-child(3) {
+                     a {
+                        color: $bk;
+
+                     }
+                  }
+               }
+            }
+
+         }
+      }
+   }
+
+   @include res($m-size: $res-mobile) {}
+
+   img {
+      @include img-box();
+   }
+}

@@ -1,0 +1,62 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+
+footer {
+   >div {
+      padding: 30px 0;
+   }
+
+   .footer-top {
+      background-color: $main-color-r;
+      @include border-r($b-r: 40px 40px 0 0);
+
+      .foot-top-list {
+         @include flex($space-between: flex-start, $gap: 40px);
+
+
+         li {
+            a {
+               @include font-s($weigth: bold, $color: #fff);
+            }
+         }
+
+         @include res($m-size: $res-ipad) {
+            gap: 20px;
+         }
+
+         @include res($m-size: $res-mobile) {
+            @include flex-cal($gap:20px);
+         }
+
+      }
+   }
+
+   .footer-bottom {
+      background-color: $main-color-y;
+
+      .inner {
+         line-height: 2;
+
+         .foot-logo {
+            margin-bottom: 10px;
+         }
+
+         .call-list {
+            @include flex($space-between: flex-start, $gap: 20px);
+
+            @include res($m-size: $res-ipad) {
+               gap: 10px;
+            }
+
+            @include res($m-size: $res-mobile) {
+               @include flex-cal();
+            }
+         }
+      }
+   }
+
+   @include res($m-size: $res-ipad) {}
+
+   @include res($m-size: $res-mobile) {}
+}

@@ -1,0 +1,742 @@
+@use 'mixin' as *;
+@use 'color' as *;
+
+.container {
+  section {
+    padding: 100px 0;
+
+    @include res($m-size: $res-ipad) {
+      padding: 50px 0;
+    }
+
+    @include res($m-size: $res-mobile) {
+      padding: 30px 0;
+    }
+
+    .title-box {
+      padding-left: 10px;
+      margin-bottom: 30px;
+
+      .title {
+        @include font-s($size: $font-large, $weigth: bold, $color: $main-color-b);
+        line-height: 1.5;
+      }
+
+      .sub-title {
+        @include font-s($size: $font-small);
+      }
+    }
+
+    .more-btn {
+      >a {
+        display: inline-block;
+        padding: 10px 30px;
+        background-color: $wh;
+        border-radius: 50px;
+        @include box-s();
+
+        &:hover {
+          @include hover-back();
+        }
+      }
+    }
+  }
+
+  img {
+    @include img-box();
+  }
+}
+
+.menu-wrap {
+  height: 100vh;
+
+  .tab-wrap {
+    @include flex($gap: 100px);
+  }
+
+  .left {
+    @include flex($space-between: center, $center: flex-start, $gap: 40px);
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+  }
+
+  .tab-title-list {
+    width: 100%;
+
+    >li {
+      overflow: hidden;
+
+      >a {
+        @include font-s($size: $font-medium);
+        width: 100%;
+        line-height: 1.5;
+
+        &:hover {
+          @include hover-text();
+        }
+      }
+    }
+
+    .active {
+
+      >a {
+        @include font-s($size: $font-medium, $weigth: bold, $color: $main-color-p);
+      }
+    }
+  }
+
+  .tab-text-list {
+    width: 100%;
+
+    >li {
+      display: none;
+      position: absolute;
+
+      >ul {
+        @include flex($space-between: center, $gap: 40px);
+        flex-wrap: wrap;
+        background-color: $wh;
+
+
+        >li {
+          width: 40%;
+          height: 330px;
+          @include box-s();
+          @include border-r();
+          padding: 40px 30px 30px;
+          overflow: hidden;
+
+          .img-box {
+            img {
+              width: 350px;
+              max-width: none;
+              position: relative;
+              transform: translateX(70%);
+              transition: 0.5s;
+
+            }
+          }
+
+          .text-box {
+            span {
+              display: block;
+              @include font-s($size: $font-medium, $weigth: bold, $color: $bk);
+            }
+
+            p {
+              @include font-s($size: $font-default, $color: $bk);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
+          }
+
+          &:hover {
+            span {
+              @include hover-text();
+            }
+
+            img {
+              width: 350px;
+              max-width: none;
+              position: relative;
+              transform: translateX(50%);
+
+            }
+          }
+        }
+      }
+
+      >.side-list {
+        li {
+          a {
+            .img-box {
+              img {
+                width: 250px;
+                position: relative;
+                transform: translateX(100%) scale(110%);
+                transition: 0.5s;
+              }
+            }
+          }
+
+          &:hover {
+            span {
+              @include hover-text();
+            }
+
+            img {
+              width: 350px;
+              max-width: none;
+              position: relative;
+              transform: translateX(60%) scale(120%) !important;
+            }
+          }
+
+        }
+      }
+    }
+
+    >.active {
+      display: block;
+      position: relative;
+    }
+  }
+
+  @include res($m-size: $res-ipad) {
+    .left {
+      flex-direction: column;
+      width: 10%;
+      height: 100%;
+    }
+
+    .tab-text-list {
+      >li {
+        >ul {
+          >li {
+            .img-box {
+              img {
+                transform: translateX(45%);
+              }
+            }
+
+            &:hover {
+              img {
+                width: 350px;
+                max-width: none;
+                position: relative;
+                transform: translateX(25%) !important;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include res($m-size: 900px) {
+    .tab-text-list {
+      >li {
+        >ul {
+          >li {
+            .img-box {
+              img {
+                transform: translateX(10%);
+              }
+            }
+
+            &:hover {
+              img {
+                width: 350px;
+                max-width: none;
+                position: relative;
+                transform: translateX(0%) !important;
+
+              }
+            }
+          }
+
+        }
+
+        >.side-list {
+          >li {
+            .img-box {
+              img {
+                transform: translateX(30%) !important;
+
+              }
+            }
+
+            &:hover {
+              .img-box {
+                img {
+                  transform: translateX(0%) !important;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include res($m-size: $res-mobile) {
+    height: 100%;
+
+    .tab-wrap {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .left {
+      @include flex($space-between: space-between, $gap: 40px);
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+    }
+
+    .tab-title-list {
+      @include flex($gap: 50px);
+      width: auto;
+
+    }
+
+    .tab-text-list {
+      >li {
+        >ul {
+          >li {
+            width: 100%;
+
+            .img-box {
+              img {
+                transform: translateX(10%);
+              }
+            }
+
+            &:hover {
+              img {
+                width: 350px;
+                max-width: none;
+                position: relative;
+                transform: translateX(-1%) !important;
+
+              }
+            }
+          }
+
+        }
+
+        >.side-list {
+          >li {
+            .img-box {
+              img {
+                transform: translateX(5%) !important;
+
+              }
+            }
+
+            &:hover {
+              .img-box {
+                img {
+                  transform: translateX(-5%) !important;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include res($m-size: $res-mobile-s) {
+    .tab-text-list {
+      >li {
+        >ul {
+          >li {
+            .img-box {
+              img {
+                transform: translateX(-15%);
+              }
+            }
+
+            &:hover {
+              img {
+                position: relative;
+                transform: translateX(-20%) !important;
+
+              }
+            }
+          }
+
+        }
+
+        >.side-list {
+          >li {
+            .img-box {
+              img {
+                transform: translateX(-30%) !important;
+
+              }
+            }
+
+            &:hover {
+              .img-box {
+                img {
+                  transform: translateX(-45%) !important;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.news-wrap {
+  background-color: $main-color-b;
+
+  .title-box {
+
+    .title,
+    .sub-title {
+      color: $wh !important;
+    }
+  }
+
+  .news-list {
+    @include flex($gap: 40px);
+    margin: 40px 0;
+
+    >li {
+      position: relative;
+      @include box-s();
+      @include border-r();
+      overflow: hidden;
+
+      .hover-wrap {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+
+        .hover {
+          @include flex($center: flex-start, $gap: 20px);
+          flex-direction: column;
+          height: 100%;
+          padding: 40px 20px 20px;
+
+          .text-title {
+            @include font-s($size: $font-medium, $weigth: bold, $color: $wh);
+          }
+
+          >div {
+            padding-bottom: 50px;
+          }
+
+          span {
+            @include font-s($color: $wh);
+            line-height: 1.5;
+          }
+
+          .button-list {
+            opacity: 0;
+          }
+
+          @include res($m-size: $res-ipad) {}
+
+          @include res($m-size: $res-mobile) {
+            padding: 20px;
+
+            span {
+              @include font-s($display: inline-block, $color: $wh);
+            }
+
+          }
+
+          @include res($m-size: 500px) {
+            padding: 20px;
+
+            span {
+              @include font-s($display: inline-block, $color: $wh);
+
+              &:nth-child(4),
+              &:nth-child(5),
+              &:nth-child(6) {
+                display: none;
+              }
+            }
+
+          }
+        }
+
+      }
+
+      .button-list {
+        @include flex($gap: 20px);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: 20px;
+        z-index: 1;
+
+        .inst-icon,
+        .arrow-btn {
+          width: 32px;
+          height: 32px;
+
+        }
+
+        >li:nth-child(2) {
+          flex: 1;
+
+          a {
+            color: $wh;
+          }
+        }
+      }
+
+
+      .img-box {
+        width: 380px;
+        height: 380px;
+      }
+    }
+
+    @include res($m-size: $res-ipad) {
+      @include flex($space-between: center, $gap: 50px);
+      flex-wrap: wrap;
+
+      >li {
+        width: 45%;
+
+        .img-box {
+          width: 100%;
+        }
+      }
+    }
+
+    @include res($m-size: $res-mobile) {
+      >li {
+        width: 100%;
+
+        .img-box {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    }
+
+    @include res($m-size: $res-mobile-s) {}
+  }
+
+  .more-btn-wrap {
+    .more-btn {
+      text-align: center;
+
+      a {
+        &:hover {
+          @include hover-back($main-color: $main-color-r);
+        }
+      }
+    }
+  }
+
+  @include res($m-size: $res-ipad) {}
+
+  @include res($m-size: $res-mobile) {}
+
+}
+
+.benefit-wrap {
+  .benefit-list {
+    .swiper-slide {
+      @include flex($space-between: center);
+      @include border-r();
+      @include box-s();
+      height: 200px;
+      margin: 30px 0;
+
+      p {
+        @include font-s($size: $font-medium);
+        text-align: center;
+
+        span {
+          @include font-s($size: $font-medium, $color: $main-color-r);
+
+        }
+      }
+
+      &:hover {
+        @include hover-back($main-color: $main-color-b);
+
+        p {
+          @include font-s($size: $font-medium, $weigth: bold, $color: $wh);
+          text-align: center;
+
+          span {
+            @include font-s($size: $font-medium, $weigth: bold, $color: $main-color-r);
+
+          }
+        }
+      }
+    }
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+      right: 50px;
+
+      @include res($m-size: $res-ipad) {
+        right: 20px;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+      left: 50px;
+
+      @include res($m-size: $res-ipad) {
+        left: 20px;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $main-color-r;
+    }
+
+    .swiper-slide-next {
+      height: 250px;
+      @include hover-back($main-color: $main-color-b);
+
+      p {
+        @include font-s($size: $font-medium, $weigth: bold, $color: $wh);
+        text-align: center;
+
+        span {
+          @include font-s($size: $font-medium, $weigth: bold, $color: $main-color-r);
+
+        }
+      }
+
+      @include res($m-size: $res-ipad) {
+        height: 200px;
+        @include hover-back($main-color: $wh);
+
+        p {
+          @include font-s($size: $font-medium, $weigth: 400, $color: $bk);
+
+          span {
+            @include font-s($size: $font-medium, $weigth: 400, $color: $main-color-r);
+
+          }
+        }
+      }
+
+    }
+
+    @include res($m-size: $res-mobile) {
+      .swiper-slide-active {
+        p {
+          @include font-s($size: $font-medium, $weigth: bold, $color: $bk);
+          text-align: center;
+
+          span {
+            @include font-s($size: $font-medium, $weigth: bold, $color: $main-color-r);
+
+          }
+        }
+      }
+    }
+  }
+
+  .more-btn {
+    text-align: center;
+  }
+}
+
+.two-title-wrap {
+  .inner {
+    @include flex($center: flex-start, $gap: 50px);
+
+    @include res($m-size: $res-ipad) {}
+
+    @include res($m-size: $res-mobile) {
+      display: block;
+
+      >div {
+        width: 100% !important;
+      }
+    }
+
+    >div {
+      width: 45%;
+
+
+      >ul {
+
+
+        >li:first-child {
+          @include border-top();
+          @include box-s($box-ss: 0px 0px 10px $main-color-b );
+          border: 1px solid #C55F25;
+        }
+
+        >li {
+          @include box-s($box-ss: 0px 0px 10px $main-color-r);
+          @include border-r();
+          margin-bottom: 20px;
+
+          >a {
+            @include flex($gap: 30px);
+            padding: 30px;
+
+            .img-box {
+              width: 10%;
+            }
+
+            .text-box {
+              width: 100%;
+            }
+
+          }
+        }
+
+        >li:nth-last-child(1) {
+          @include border-button();
+          @include box-s($box-ss: 0px 0px 10px $main-color-b );
+          border: 1px solid #C55F25;
+        }
+      }
+    }
+
+    .downlode-list {
+      .more-btn {
+        text-align: center;
+      }
+    }
+    .d-more-wrap{
+      @include flex($space-between:center);
+    }
+
+    .more-list {
+      li {
+        a {
+          // .img-box {}
+
+          .text-box {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            >div {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+            }
+
+            >div:first-child {
+              padding-bottom: 10px;
+              border-bottom: 1px solid $geee;
+            }
+          }
+        }
+      }
+    }
+  }
+}

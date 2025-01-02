@@ -1,0 +1,56 @@
+/* styles.css */
+body {
+   font-family: Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+   background-color: #f4f4f4;
+}
+
+#calendar {
+   width: 300px;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   background-color: #fff;
+   overflow: hidden;
+}
+
+#calendar-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   background-color: #4CAF50;
+   color: #fff;
+}
+
+#calendar-days, #calendar-dates {
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   text-align: center;
+}
+
+.day, .date {
+   padding: 10px;
+}
+
+.date {
+   cursor: pointer;
+}
+
+.date:hover {
+   background-color: #e0f7fa;
+}
+
+.today {
+   background-color: #a5d6a7;
+   color: #fff;
+}
+
+/* 선택된 날짜 스타일 */
+.selected-date {
+   background-color: #ffeb3b; /* 노란색 배경 */
+   color: #333; /* 텍스트 색상 */
+}

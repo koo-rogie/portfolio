@@ -1,0 +1,556 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+.container {
+   section {
+      padding: 100px 0;
+
+      @include res($res-ipad) {
+         padding: 50px 0;
+      }
+
+      @include res($res-mobile) {
+         padding: 30px 0;
+      }
+
+      @include res($res-mobile-s) {
+         padding: 20px 0;
+      }
+   }
+
+   .notice-event-banner-wrap {
+      .inner {
+         .title {
+            text-align: center;
+            margin-bottom: 30px
+         }
+
+         .sub-title {
+            @include font-s($size: $font-medium);
+            position: relative;
+
+            &::before {
+               content: "";
+               display: block;
+               position: absolute;
+               width: 5px;
+               height: 100%;
+               top: 0px;
+               left: -10px;
+               background-color: $main-color-r;
+
+            }
+         }
+
+         .tab-tltle {
+            @include flex($gap: 30px);
+
+            li {
+               a {
+                  @include font-s();
+
+               }
+            }
+
+            .active {
+               a {
+                  @include font-s($weigth: bold, $color: $main-color-r)
+               }
+            }
+         }
+
+         .n-e-b-wrap {
+            @include flex();
+
+            @include res($m-size: $res-ipad) {
+               flex-wrap: wrap;
+            }
+
+            >div {
+               width: 25%;
+               height: 600px;
+               padding: 20px;
+               position: relative;
+
+               @include res($m-size: $res-ipad) {
+                  width: 50%;
+                  height: auto;
+               }
+
+               @include res($res-mobile) {
+                  width: 100%;
+               }
+            }
+
+            .title-box {
+               @include flex();
+            }
+
+            .tab-list {
+               margin: 30px 0;
+
+               >ul {
+                  display: none;
+                  margin: 10px 0;
+
+                  li {
+                     width: 100%;
+                     margin: 10px 0;
+
+                     a {
+                        @include flex($gap: 30px);
+
+                        .text-title {
+                           @include box-s();
+                           @include border-r();
+                           @include font-s($weigth: bold, $color: $wh);
+                           background-color: $main-color-r;
+                           padding: 10px 20px;
+                           width: 90px;
+                           text-align: center;
+
+                           @include res($m-size: $res-mobile) {
+                              padding: 10px;
+                              width: 60px;
+                           }
+                        }
+
+                        .text {
+                           width: 100%;
+                           flex: 1;
+
+                           @include res($m-size: $res-mobile) {
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 2;
+                              -webkit-box-orient: vertical;
+                           }
+                        }
+
+                     }
+                  }
+               }
+
+               .student-list {
+                  .text-title {
+                     background-color: $main-color-g;
+                  }
+               }
+
+               .parent-list {
+                  .text-title {
+                     @include font-s();
+                     background-color: $main-color-y;
+                  }
+               }
+
+               >.active {
+                  display: block;
+               }
+            }
+
+            .notice-wrap {
+               width: 50%;
+
+               @include res($m-size: $res-ipad) {
+                  width: 100%;
+               }
+
+               .year {
+                  display: block;
+                  width: 90px;
+
+                  @include res($m-size: $res-mobile) {
+                     width: 50px;
+                  }
+               }
+            }
+
+            .event-wrap {
+               .year-back {
+                  @include flex-cal($center: center, $gap: 5px);
+                  padding: 10px;
+                  background-color: $bk-50;
+                  width: 60px;
+                  @include border-r();
+
+                  p,
+                  span {
+                     color: $wh;
+                  }
+
+               }
+
+               .text-box {
+                  p {
+                     text-align: right;
+                  }
+               }
+
+               .list-11 {
+                  .year-back {
+                     background-color: $main-color-r;
+                  }
+               }
+
+               .list-12 {
+                  .year-back {
+                     background-color: $main-color-g;
+                  }
+               }
+
+               .list-1 {
+                  .year-back {
+                     background-color: $main-color-y;
+
+                     p,
+                     span {
+                        color: $bk;
+                     }
+                  }
+               }
+            }
+
+            .banner-wrap {
+
+               html,
+               body {
+                  position: relative;
+                  height: 100%;
+               }
+
+               .swiper {
+                  width: 100%;
+                  height: 100%;
+               }
+
+               .swiper-slide {
+                  text-align: center;
+                  font-size: 18px;
+                  background: #fff;
+                  @include flex-cal();
+               }
+
+               .swiper-slide img {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+
+
+            }
+
+            .more-btn {
+               position: absolute;
+               @include flex();
+               right: 20px;
+               bottom: -10px;
+               z-index: 10000000000;
+
+               @include res($m-size: $res-ipad) {
+                  bottom: 0;
+               }
+
+               span {
+                  display: block;
+                  width: 30px;
+                  height: 30px;
+                  background: url(../images/03-icon/arrow-left.svg) no-repeat center center;
+                  transition: 0.5s;
+               }
+
+               &:hover {
+                  span {
+                     display: block;
+                     width: 60px;
+                     height: 30px;
+                     background: url(../images/03-icon/arrow_left_alt.svg) no-repeat center center;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .school-meals-wrap {
+      .year-img-box {
+         @include flex($gap: 30px);
+
+         >div {
+            width: 50%;
+            height: 100%;
+         }
+
+         /* 기존 스타일에 맞춰 새로운 달력 스타일 추가 */
+         #calendar {
+            height: 700px;
+         }
+
+         .calendar-container {
+            @include border-r();
+            border: 1px solid #ccc;
+            overflow: hidden;
+            height: 100%;
+         }
+
+         #calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: $main-color-g;
+            color: #fff;
+
+         }
+
+         #calendar-days,
+         #calendar-dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            margin: 50px 0;
+         }
+
+         #calendar-days {
+            div {
+               &:nth-child(1) {
+                  color: red;
+               }
+
+               &:nth-child(7) {
+                  color: blue;
+               }
+            }
+         }
+
+         .day,
+         .date {
+            padding: 10px;
+         }
+
+         .date {
+            cursor: pointer;
+         }
+
+         .date:hover {
+            background-color: $main-color-g;
+            color: $wh;
+         }
+
+         .today {
+            background-color: $main-color-g;
+            color: $wh;
+         }
+
+         .selected-date {
+            background-color: $main-color-g;
+            color: $wh;
+         }
+
+         /* 빈 칸 스타일 */
+         .date.empty {
+            background-color: transparent;
+         }
+
+         #prev {
+            color: $wh;
+            padding: 10px;
+         }
+
+         #today {
+            color: $wh;
+            padding: 10px;
+         }
+
+         #next {
+            color: $wh;
+            padding: 10px;
+         }
+
+         .img-wrap {
+            .img-list {
+               >li {
+                  display: none;
+
+                  >div {
+                     height: 50%;
+                  }
+
+                  .img-box {
+                     .text-title {
+                        @include font-s($size: $font-medium, $weigth: bold);
+                     }
+
+                     span {
+                        @include flex-cal($space-between: center, $center: center, $gap: 10px);
+                        width: 100%;
+                        height: 500px;
+                        text-align: center;
+                        @include font-s($display: flex, $size: $font-small-m, $weigth: bold);
+
+                        a {
+                           @include font-s();
+                           @include box-s();
+                           @include border-r();
+                           padding: 10px 20px;
+                           text-align: center;
+
+                           &:hover {
+                              @include hover-back($main-color: $main-color-r);
+                           }
+                        }
+                     }
+                  }
+
+                  .text-box {
+                     @include flex($center: flex-start);
+                     margin-top: 10px;
+
+                     >div {
+                        width: 50%;
+
+                        .text-title {
+                           @include font-s($size: $font-small, $weigth: bold);
+                        }
+                     }
+
+                     .menu-list {
+                        li {
+                           line-height: 1.5;
+                        }
+                     }
+
+                     .allergy-list {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        text-align: center;
+                        justify-items: start;
+
+                        >li {
+                           line-height: 1.5;
+                        }
+                     }
+                  }
+               }
+
+               .active {
+                  display: block;
+               }
+            }
+         }
+      }
+
+      @include res($m-size: $res-ipad) {
+         .year-img-box {
+            .img-wrap {
+               .img-list {
+                  >li {
+                     .text-box {
+                        .allergy-list {
+                           grid-template-columns: repeat(3, 1fr);
+                        }
+                     }
+                  }
+
+                  .active {
+                     display: block;
+                  }
+               }
+            }
+         }
+      }
+
+      @include res($m-size: $res-mobile) {
+         .year-img-box {
+
+            flex-wrap: wrap;
+
+            #calendar {
+               height: auto;
+            }
+
+            #calendar-days,
+            #calendar-dates {
+               margin: 10px 0;
+            }
+
+
+
+            >div {
+               width: 100%;
+            }
+
+            .img-wrap {
+               .img-list {
+                  >li {
+                     .img-box {
+                        span {
+                           height: 300px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      @include res($m-size: $res-mobile-s) {}
+
+   }
+
+   .map-wrap {
+      position: relative;
+
+      .title {
+         color: $wh;
+      }
+
+      .map-inner {
+         width: 100%;
+         height: 650px;
+
+         #map {
+            width: 100%;
+            height: 100%;
+         }
+      }
+
+      .map-text-inner {
+         position: absolute;
+         right: 100px;
+         top: 50%;
+         height: 60%;
+         transform: translateY(-50%);
+         padding: 50px;
+         background-color: $main-color-r;
+         color: $wh;
+         @include box-s();
+         @include border-r();
+         z-index: 1000000;
+
+         .sub-title,
+         .text-title {
+            color: $wh;
+         }
+
+         .sub-title {
+            font-weight: bold;
+
+         }
+
+         @include res($m-size: $res-mobile) {
+            right: 0px;
+            top: 80%;
+            width: 100%;
+            height: 30%;
+            padding: 20px;
+         }
+      }
+   }
+
+   img {
+      @include img-box();
+   }
+}

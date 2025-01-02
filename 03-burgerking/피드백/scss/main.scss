@@ -1,0 +1,470 @@
+@use 'mixin' as *;
+@use 'color' as *;
+
+.container {
+  section {
+    padding: 100px 0;
+
+    @include res($m-size: $res-ipad) {
+      padding: 50px 0;
+    }
+
+    @include res($m-size: $res-mobile) {
+      padding: 30px 0;
+    }
+
+    .title-box {
+      padding-left: 10px;
+      margin-bottom: 30px;
+
+      .title {
+        @include font-s($size: $font-large, $weigth: bold);
+        line-height: 1.5;
+      }
+
+      .sub-title {
+        @include font-s($size: $font-small);
+      }
+    }
+
+    .more-btn {
+      >a {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: $wh;
+        border-radius: 50px;
+        @include box-s();
+
+        &:hover {
+          @include hover-back();
+        }
+      }
+    }
+  }
+
+  img {
+    @include img-box();
+  }
+}
+
+.menu-wrap {
+  height: 100vh;
+  .tap-wrap {
+    @include flex($gap:120px);
+    // height: 100vh;
+  }
+
+  .left {
+    @include flex($space-between: center, $center: flex-start, $gap: 40px);
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+  }
+
+  .tab-title-list {
+    width: 100%;
+
+    >li {
+      overflow: hidden;
+      >a {
+        @include font-s($size: $font-medium);
+        width: 100%;
+        line-height: 1.5;
+
+        &:hover {
+          @include hover-text();
+        }
+      }
+    }
+
+    .active {
+   
+      >a {
+        @include font-s($size: $font-medium, $weigth: bold, $color: $main-color-p);
+      }
+    }
+  }
+
+  .tab-text-list {
+    position: relative;
+    width: 100%;
+
+    >li {
+      position: absolute;
+      display: none;
+
+      >ul {
+        @include flex($space-between: center, $gap: 40px);
+        flex-wrap: wrap;
+        background-color: $wh;
+        height: 100%;
+
+        >li {
+          width: 40%;
+          height: 50%;
+          @include box-s();
+          @include border-r();
+          padding: 0 30px 30px;
+
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .img-box {
+            // width: 400px;
+            // position: absolute;
+            height: 100%;
+            img{
+              width: 600px;
+              max-width: none;
+            }
+          }
+
+          .text-box {
+            span {
+              display: block;
+              @include font-s($size: $font-medium, $weigth: bold, $color: $bk);
+
+            }
+          }
+
+          &:hover {
+            span {
+              @include hover-text();
+            }
+          }
+        }
+      }
+    }
+
+    >.active {
+      display: block;
+      position: relative;
+    }
+
+    @include res($m-size: $res-ipad) {}
+
+    @include res($m-size: $res-mobile) {}
+
+  }
+
+  @include res($m-size: $res-ipad) {
+    .left {
+      flex-direction: column;
+      width: 10%;
+      height: 100%;
+    }
+  }
+
+  @include res($m-size: $res-mobile) {
+    .tap-wrap {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .left {
+      @include flex($space-between: space-between, $gap: 40px);
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      padding: 0 50px;
+    }
+
+    .tab-title-list {
+      @include flex($gap: 50px);
+      width: auto;
+    }
+  }
+}
+
+.news-wrap {
+  background-color: $main-color-b;
+
+  .title-box {
+
+    .title,
+    .sub-title {
+      color: $wh !important;
+    }
+  }
+
+  .news-list {
+    @include flex($gap: 50px);
+    margin: 40px 0;
+
+    >li {
+      position: relative;
+      @include box-s();
+      @include border-r();
+      overflow: hidden;
+
+      .hover-wrap {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+
+        .hover {
+          @include flex($center: flex-start, $gap: 20px);
+          flex-direction: column;
+          height: 100%;
+          padding: 40px 20px 20px;
+
+          .text-title {
+            @include font-s($size: $font-medium, $weigth: bold, $color: $wh);
+          }
+
+          >div {
+            padding-bottom: 50px;
+          }
+
+          span {
+            @include font-s($color: $wh);
+            line-height: 1.5;
+          }
+
+          .button-list {
+            opacity: 0;
+          }
+        }
+
+      }
+
+      .button-list {
+        @include flex($gap: 20px);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: 20px;
+        z-index: 1;
+
+        .inst-icon,
+        .arrow-btn {
+          width: 32px;
+          height: 32px;
+
+        }
+
+        >li:nth-child(2) {
+          flex: 1;
+
+          a {
+            color: $wh;
+          }
+        }
+      }
+
+
+      .img-box {
+        width: 380px;
+        height: 380px;
+      }
+    }
+
+    @include res($m-size: $res-ipad) {
+      @include flex($space-between: center, $gap: 50px);
+      flex-wrap: wrap;
+
+      >li {
+        width: 45%;
+
+        .img-box {
+          width: 100%;
+        }
+      }
+    }
+
+    @include res($m-size: $res-mobile) {
+      >li {
+        width: 100%;
+
+        .img-box {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    }
+  }
+
+  .more-btn-wrap {
+    .more-btn {
+      text-align: center;
+
+      a {
+        &:hover {
+          @include hover-back($main-color: $main-color-r);
+        }
+      }
+    }
+  }
+
+  @include res($m-size: $res-ipad) {}
+
+  @include res($m-size: $res-mobile) {}
+
+}
+
+.benefit-wrap {
+  .benefit-list {
+    .swiper-slide {
+      @include flex($space-between: center);
+      @include border-r();
+      @include box-s();
+      height: 200px;
+      margin: 30px 0;
+
+      p {
+        @include font-s($size: $font-medium);
+        text-align: center;
+
+        span {
+          @include font-s($size: $font-medium, $color: $main-color-r);
+
+        }
+      }
+
+      &:hover {
+        @include hover-back($main-color: $main-color-b);
+
+        p {
+          @include font-s($size: $font-medium, $weigth: bold, $color: $wh);
+          text-align: center;
+
+          span {
+            @include font-s($size: $font-medium, $weigth: bold, $color: $main-color-r);
+
+          }
+        }
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+      right: 50px;
+
+      @include res($m-size: $res-ipad) {
+        right: 20px;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+      left: 50px;
+
+      @include res($m-size: $res-ipad) {
+        left: 20px;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $main-color-r;
+    }
+  }
+
+  .more-btn {
+    text-align: center;
+  }
+}
+
+.two-title-wrap {
+  .inner {
+    @include flex($center: flex-start, $gap: 50px);
+
+    @include res($m-size: $res-ipad) {
+      // display: block;
+
+      // >div {
+      //   width: 100% !important;
+      // }
+    }
+
+    @include res($m-size: $res-mobile) {
+      display: block;
+
+      >div {
+        width: 100% !important;
+      }
+    }
+
+    >div {
+      width: 45%;
+
+
+      >ul {
+
+        a,
+        span,
+        strong {
+          color: $wh;
+        }
+
+        >li:first-child {
+          @include border-top();
+        }
+
+        >li {
+          @include box-s();
+          @include border-r();
+          @include border-center();
+          margin-bottom: 20px;
+
+          >a {
+            @include flex($gap: 30px);
+            padding: 30px;
+
+            .img-box {
+              width: 10%;
+            }
+
+            .text-box {
+              width: 100%;
+            }
+
+          }
+        }
+
+        >li:nth-last-child(1) {
+          @include border-button();
+        }
+      }
+    }
+
+    .downlode-list {
+      .more-btn {
+        text-align: center;
+      }
+    }
+
+    .more-list {
+      li {
+        a {
+          // .img-box {}
+
+          .text-box {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            >div {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+            }
+
+            >div:first-child {
+              padding-bottom: 10px;
+              border-bottom: 1px solid $geee;
+            }
+          }
+        }
+      }
+    }
+  }
+}

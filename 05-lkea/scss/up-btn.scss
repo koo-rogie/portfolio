@@ -1,0 +1,35 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+.up-wrap {
+   position: fixed;
+   right: 10%;
+   bottom: 10%;
+   z-index: 10000000;
+   @include res($m-size: $res-mobile) {
+      right: 5%;
+      bottom: 5%;
+   }
+   >div {
+      >a {
+         display: block;
+         padding: 25px;
+         background-color: $wh;
+         @include box-s();
+         @include border-r();
+         margin-top: 10px;
+
+         &:hover {
+            background-color: $main-color-b;
+         }
+
+         @include res($m-size: $res-mobile) {
+            padding: 10px;
+         }
+      }
+   }
+
+   img {
+      @include img-box();
+   }
+}

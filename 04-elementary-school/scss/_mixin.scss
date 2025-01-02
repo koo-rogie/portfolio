@@ -1,0 +1,73 @@
+@use 'color' as *;
+
+@mixin flex($flex: flex, $space-between: space-between, $center: center, $gap: 0) {
+    display: $flex;
+    justify-content: $space-between;
+    align-items: $center;
+    gap: $gap;
+}
+
+@mixin flex-cal($flex: flex, $space-between: space-between, $center: flex-start, $gap: 0) {
+    display: $flex;
+    justify-content: $space-between;
+    align-items: $center;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin font-s($display: block, $size: $font-default, $weigth: 400, $color: $bk) {
+    display: $display;
+    font-size: $size;
+    font-weight: $weigth;
+    color: $color;
+}
+
+@mixin arrow() {
+    display: inline-block;
+    background: url(../images/03-icon/caret-down.svg) no-repeat 90% center;
+}
+
+@mixin arrow-active() {
+    display: inline-block;
+    background: url(../images/03-icon/caret-up.svg) no-repeat 90% center;
+}
+
+@mixin box-s ($box-ss: 2px 4px 9px rgba(0, 0, 0, 0.1)) {
+    box-shadow: $box-ss;
+}
+
+@mixin border-r($b-r: 40px) {
+    border-radius: $b-r;
+}
+
+@mixin hover-text($main-color: $main-color-r) {
+    color: $main-color;
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+@mixin hover-back($main-color: $main-color-y, $color: $wh) {
+    background-color: $main-color;
+    color: $color;
+    transition: 0.5s;
+}
+
+@mixin res ($m-size) {
+    @media screen and (max-width:$m-size) {
+        @content;
+    }
+}
+
+@mixin border($color-b: $g555) {
+    border-top: 1px solid $color-b;
+    border-bottom: 1px solid $color-b;
+}
+
+
+
+@mixin img-box () {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

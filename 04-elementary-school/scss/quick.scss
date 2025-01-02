@@ -1,0 +1,108 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+.quick-wrap {
+   position: fixed;
+   right: 5%;
+   bottom: 10%;
+   z-index: 10000000;
+
+   .quick-inner {
+      position: relative;
+
+      .quick-list {
+         display: none;
+         position: absolute;
+         left: 0;
+         bottom: 100%;
+         width: auto;
+         height: auto;
+
+         li {
+            margin: 30px 0;
+
+            a {
+               position: relative;
+
+               .img-box {
+                  @include flex();
+                  @include box-s();
+                  @include border-r();
+                  padding: 10px;
+                  width: 50px;
+                  height: 50px;
+                  background-color: $wh;
+
+               }
+
+               .text-box {
+                  position: absolute;
+                  @include flex($center: right);
+                  right: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 100px;
+                  background-color: $wh;
+                  padding: 5px;
+                  @include border-r();
+                  @include box-s();
+                  opacity: 0;
+               }
+            }
+
+            &:hover {
+               a {
+                  .img-box {
+                     background-color: $main-color-y;
+                  }
+               }
+            }
+         }
+      }
+
+      .quick-title {
+         @include font-s();
+
+         a {
+            position: relative;
+
+            .img-box {
+               background: $main-color-y url(../images/02-container/01-quick/iconmonstr-clock-thin.svg) no-repeat center center;
+               width: 50px;
+               height: 50px;
+               @include box-s();
+               @include border-r();
+            }
+
+            .text-box {
+               position: absolute;
+               @include flex($center: right);
+               right: 0;
+               top: 50%;
+               transform: translateY(-50%);
+               width: 100px;
+               background-color: $wh;
+               padding: 5px;
+               @include border-r();
+               @include box-s();
+               opacity: 0;
+            }
+
+            &.active {
+
+               .img-box {
+                  background: $main-color-y url(../images/03-icon/x.svg) no-repeat center center;
+                  background-size: 50%;
+                  padding: 10px;
+
+               }
+            }
+         }
+      }
+   }
+
+
+   img {
+      @include img-box();
+   }
+}

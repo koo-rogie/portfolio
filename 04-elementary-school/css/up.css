@@ -1,0 +1,22 @@
+.up-btn {
+  position: fixed;
+  display: none;
+  right: 5%;
+  bottom: 5%;
+  z-index: 10000000;
+}
+.up-btn a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #D40100;
+  padding: 10px;
+  border-radius: 20px;
+}
+.up-btn a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

@@ -1,0 +1,46 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recruit-wrap>.inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-recruit {
+    position: relative;
+    width: 500px;
+    height: 300px;
+}
+
+.box-recruit>div {
+    position: absolute;
+}

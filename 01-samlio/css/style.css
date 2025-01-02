@@ -1,0 +1,462 @@
+/* 컨테이너 공통사항 */
+.container section {
+  padding: 100px 0;
+}
+
+.container>section .main-title {
+  font-family: "Maplestory";
+  color: #2d3a80;
+  font-size: 2em;
+}
+
+.more-btn>a {
+  font-family: "Maplestory";
+  font-weight: bold;
+  background-color: white;
+  color: #2d3a80;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.more-btn>a:hover {
+  background-color: #ffc7ec;
+}
+
+/* 캐릭터 */
+
+.charhter-wrap .text-box>.main-title {
+  font-size: 2.5em;
+}
+
+.charhter-wrap .text-box>.sub-title {
+  font-size: 2em;
+  color: #2d3a80;
+  padding-bottom: 200px;
+  padding-top: 10px;
+}
+
+.charhter-wrap .text-box>.search form {
+  position: relative;
+}
+
+.charhter-wrap .text-box>.search input {
+  border: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #5b5b5b;
+  width: 100%;
+}
+
+
+.charhter-wrap .text-box>.search input:focus {
+  outline: none;
+}
+
+.charhter-wrap .text-box>.search button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  color: #5b5b5b;
+}
+
+.charhter-wrap .icon-box {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.charhter-wrap .icon-box .icon-list>li {
+  position: absolute;
+}
+
+.charhter-wrap .icon-box .icon-list>li>a {
+  font-family: "Maplestory";
+  font-weight: bold;
+  font-size: 1.75em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 60px 60px 0px 60px;
+  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  transition: 0.4s;
+}
+
+.charhter-wrap .icon-box .icon-list>li>a:hover {
+  transform: scale(1.2);
+}
+
+.charhter-wrap .icon-box .icon-list>li img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.charhter-wrap .icon-box .icon-list>li:first-child {
+  left: 160px;
+  top: 100px;
+}
+
+.charhter-wrap .icon-box .icon-list>li:first-child>a {
+  background-color: #2d3a80;
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(2) {
+  right: 100px;
+  top: 100px;
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(2)>a {
+  background-color: #ff8b23;
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(3) {
+  right: 20%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(3)>a {
+  background-color: #2d3a80;
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(4) {
+  left: 250px;
+  bottom: 230px;
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(4)>a {
+  background-color: #6837f8;
+
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(5) {
+  right: 100px;
+  bottom: 100px;
+}
+
+.charhter-wrap .icon-box .icon-list>li:nth-child(5)>a {
+  background-color: #313842;
+
+}
+
+.charhter-wrap .icon-box .icon-list>li:last-child {
+  left: 100px;
+  bottom: 75px;
+}
+
+.charhter-wrap .icon-box .icon-list>li:last-child>a {
+  background-color: #37d243;
+
+}
+
+
+
+
+/* ----------------------고용---------------------------- */
+.company-wrap {
+  background-color: #f2f2f2;
+}
+
+.company-wrap>.inner {
+  padding-top: 100px;
+  background: url(../images/0-main/section-2-bg.png) no-repeat center 20%;
+}
+
+.company-wrap .main-title {
+  text-align: center;
+  line-height: 4;
+}
+
+.company-wrap .company .company-list {
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.company-wrap .company .company-list>li {
+  width: 500px;
+  height: 600px;
+  background-color: #2d3a80;
+  border-radius: 10px;
+  padding: 70px 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-list>li .text-box .title {
+  font-family: "Maplestory";
+  font-size: 36px;
+
+
+}
+
+.company-list>li .text-box .sub-title {
+  padding-top: 10px;
+  color: #fff;
+}
+
+.company-list>li .text-box .list {
+  padding: 50px 0 150px;
+
+}
+
+.company-list>li .text-box a {}
+
+.more-btn>a:hover {
+  color: #fff;
+  background-color: #2d3a80;
+  border: 1px solid white;
+}
+
+.company-list>li .img-box {
+  position: absolute;
+  bottom: -5%;
+  right: -5%;
+}
+
+.company-list>li .img-box img {
+  width: 300px;
+}
+
+/* ------------------찾아오시는 길-------------- */
+.contact-us-wrap {
+  background-color: skyblue;
+  position: relative;
+  height: 100vh;
+}
+
+.contact-us-wrap>.map-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-us-wrap #map {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.contact-us-wrap .text-box {
+  position: absolute;
+  right: 10%;
+  bottom: 50%;
+  transform: translateY(50%);
+  background-color: #2d3a80;
+  border-radius: 50px;
+  width: 540px;
+  height: 80vh;
+  color: #fff;
+  padding: 50px 3%;
+  z-index: 10;
+}
+
+.contact-us-wrap .text-box .main-title {
+  color: #fff;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.contact-us-wrap .text-box .title {
+  font-size: 2em;
+  padding: 1em 0;
+}
+
+.contact-us-wrap .text-box .list strong {
+  font-size: 1.5em;
+  line-height: 2;
+}
+
+@media screen and (max-width:1279px) {
+
+  /* -------------------------캐릭터----------------------- */
+  .charhter-wrap .text-box {
+    padding: 10px;
+  }
+
+  .charhter-wrap .icon-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .charhter-wrap .icon-box .icon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .charhter-wrap .icon-box .icon-list>li {
+    position: static;
+  }
+
+  .charhter-wrap .icon-box .icon-list>li>a:hover {
+    transform: scale(1);
+  }
+
+  .charhter-wrap .icon-box .icon-list>li:nth-child(3) {
+    transform: translate(0, 0);
+  }
+
+  /* -------------------------고용----------------------- */
+  .company-wrap .company .company-list {
+    gap: 30px;
+  }
+
+  .company-wrap .company .company-list>li {
+    width: 400px;
+    height: 500px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .company-list>li .text-box .sub-title {
+    padding: 20px 0 20px;
+  }
+
+  .company-list>li .text-box .list {
+    display: none;
+  }
+
+  /* ---------------------------------찾아오시는길-------------------------- */
+
+  .contact-us-wrap {
+    height: 700px;
+  }
+
+  .map-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-us-wrap #map {
+    display: block;
+    width: 100%;
+    height: 70vh;
+  }
+
+  .contact-us-wrap .text-box {
+    /* position: sticky; */
+    height: auto;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    transform: translate(0);
+    border-radius: 50px 50px 0 0 ;
+  }
+
+  .contact-us-wrap .text-box .title {
+    text-align: center;
+  }
+
+  .contact-us-wrap .text-box .list {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .contact-us-wrap .text-box .list::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid #161e4b;
+    width: 100%;
+    height: 1px;
+    bottom: -70%;
+  }
+
+  .contact-us-wrap .text-box .list strong {
+    display: block;
+    text-align: center;
+  }
+
+
+
+}
+
+/* ----------------------------------------------모바일---------------------------------------------------- */
+
+@media screen and (max-width:767px) {
+  .container section {
+    padding-top: 40px;
+  }
+
+  .container section .inner {
+    height: auto;
+  }
+
+  /* -----------------------캐릭터----------------------- */
+  .charhter-wrap>.inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .charhter-wrap .text-box {
+    text-align: center;
+    width: 100%;
+  }
+
+  .charhter-wrap .text-box>.sub-title {
+    padding: 5% 0;
+  }
+
+  .charhter-wrap .text-box>.search {
+    padding-bottom: 5%;
+  }
+
+  .charhter-wrap .icon-box {
+    width: 100%;
+  }
+
+  .charhter-wrap .icon-box .icon-list>li {
+    width: auto;
+  }
+
+  /* ----------------------채용---------------------------- */
+  .company-wrap>.inner {
+    padding: 0;
+  }
+
+  .company-wrap .company .company-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .company-wrap .company .company-list>li {
+    width: 100%;
+    height: auto;
+    padding: 4%;
+  }
+
+  .company-list>li .text-box .title {
+    padding-bottom: 0px;
+  }
+
+  .company-list>li .text-box .sub-title {
+    padding: 10px 0 40px;
+  }
+
+  .company-list>li .img-box img {
+    width: 200px;
+  }
+
+  /* ----------------------찾아오시는 길---------------------------- */
+
+  /* .contact-us-wrap {
+    height: 50vh !important;
+  } */
+}

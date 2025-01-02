@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+img,
+video {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+address,
+i,
+em {
+    font-style: normal;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #222;
+    font-weight: 400;
+    word-break: keep-all;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner {
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+.titie {
+    font-family: "Maplestory";
+    color: #000;
+}
+
+.sub-title {
+    font-family: "BM JUA";
+    color: #000;
+}
+
+input,
+textarea,
+button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1720px) {
+    .inner {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width:1279px) {
+    body {
+        font-size: 14px;
+    }
+
+    .inner {
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (max-width:767px) {
+    body {
+        font-size: 12px;
+    }
+
+    .inner {
+        padding: 0 10px;
+    }
+}

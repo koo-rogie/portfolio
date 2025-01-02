@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22.67 17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        mask: url(#mask);
+      }
+    </style>
+    <mask id="mask" x="-5.67" y="-8.5" width="34" height="34" maskUnits="userSpaceOnUse"/>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-2">
+      <path class="cls-1" d="M14.17,17l-1.98-2.05,5.03-5.03H0v-2.83H17.21L12.18,2.05l1.98-2.05,8.5,8.5-8.5,8.5Z"/>
+    </g>
+  </g>
+</svg>

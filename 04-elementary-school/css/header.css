@@ -1,0 +1,320 @@
+header {
+  position: relative;
+}
+header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  height: 100px;
+}
+@media screen and (max-width: 1279px) {
+  header .inner {
+    height: 80px;
+  }
+}
+header .inner .logo {
+  width: 200px;
+  min-width: 100px;
+}
+@media screen and (max-width: 1279px) {
+  header .inner .logo {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  header .inner .logo {
+    width: 100px;
+  }
+}
+header .inner .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 1279px) {
+  header .inner .nav {
+    display: none;
+  }
+}
+header .inner .nav > li > a {
+  display: block;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: #000;
+}
+header .inner .nav > li > a:hover {
+  color: #D40100;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+header .inner .nav > li .sub-wrap {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 500px;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 40px 40px;
+}
+header .inner .nav > li .sub-wrap .sub-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 50px;
+}
+header .inner .nav > li .sub-wrap .sub-list .sub {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+header .inner .nav > li .sub-wrap .sub-list .sub::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: -50px;
+  width: 50px;
+  height: 500px;
+  background: #D40100;
+  z-index: -1;
+}
+header .inner .nav > li .sub-wrap .sub-list .sub::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -100px;
+  top: -50px;
+  width: 50px;
+  height: 200px;
+  background: #FFD900;
+  border-radius: 0 0 40px 0;
+  z-index: -1;
+}
+header .inner .nav > li .sub-wrap .sub-list .sub > li {
+  width: 20%;
+  height: 30%;
+}
+header .inner .nav > li .sub-wrap .sub-list .sub > li > a {
+  display: block;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: #000;
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: #fff;
+}
+header .inner .nav > li .sub-wrap .sub-list .sub > li > a:hover {
+  color: #D40100;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+header .inner .gnb-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+@media screen and (max-width: 1279px) {
+  header .inner .gnb-list {
+    display: none;
+  }
+}
+header .inner .gnb-list > li {
+  position: relative;
+  z-index: 1000;
+}
+header .inner .gnb-list > li > a {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  padding: 10px;
+}
+header .inner .gnb-list > li ul {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+}
+header .inner .gnb-list > li ul li {
+  width: 100%;
+}
+header .inner .gnb-list > li ul li a {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  padding: 20px 10px;
+}
+header .inner .gnb-list .lang-wrap a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+header .inner .gnb-list .lang-wrap a span {
+  display: inline-block;
+  background: url(../images/03-icon/caret-down.svg) no-repeat 90% center;
+  width: 30px;
+  height: 30px;
+}
+header .inner .gnb-list .lang-wrap a.active span {
+  display: inline-block;
+  background: url(../images/03-icon/caret-up.svg) no-repeat 90% center;
+  width: 30px;
+  height: 30px;
+}
+header .inner .gnb-list .lang-wrap a:hover {
+  color: #D40100;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+header .inner .gnb-list .lang-wrap .lang-list {
+  top: 42px;
+  width: 100%;
+}
+header .inner .gnb-list .lang-wrap .lang-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+header .inner .gnb-list .person-wrap ul {
+  top: 42px;
+}
+header .inner .gnb-list .person-wrap ul li a:hover {
+  color: #D40100;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+header .inner .m-wrap,
+header .inner .ham-btn {
+  display: none;
+}
+@media screen and (max-width: 1279px) {
+  header .inner .m-wrap,
+  header .inner .ham-btn {
+    display: block;
+  }
+  header .inner .ham-btn a {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+  header .inner .m-wrap {
+    position: fixed;
+    display: block;
+    width: 70%;
+    height: 100vh;
+    left: -100%;
+    top: 0;
+    overflow-y: scroll;
+    background-color: #fff;
+    z-index: 1000000;
+  }
+  header .inner .m-wrap::-webkit-scrollbar {
+    width: 10px;
+  }
+  header .inner .m-wrap::-webkit-scrollbar-track {
+    background-color: #eee;
+  }
+  header .inner .m-wrap::-webkit-scrollbar-thumb {
+    background: #D40100;
+    border-radius: 10px;
+  }
+  header .inner .m-wrap .close-btn {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+  }
+}
+@media screen and (max-width: 1279px) and (max-width: 767px) {
+  header .inner .m-wrap .close-btn {
+    top: 14px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  header .inner .m-wrap .close-btn a {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+  header .inner .m-wrap .m-nav {
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width: 1279px) and (max-width: 767px) {
+  header .inner .m-wrap .m-nav {
+    padding-top: 60px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  header .inner .m-wrap .m-nav > li {
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+  }
+  header .inner .m-wrap .m-nav > li > a {
+    display: block;
+    width: 100%;
+    background: url(../images/03-icon/caret-down.svg) no-repeat 95% center;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+    padding: 10px 20px;
+  }
+  header .inner .m-wrap .m-nav > li > a:hover {
+    color: #D40100;
+    text-decoration: underline;
+    transition: 0.5s;
+  }
+  header .inner .m-wrap .m-nav > li .sub {
+    display: none;
+  }
+  header .inner .m-wrap .m-nav > li .sub > li > a {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    padding: 10px 30px;
+  }
+  header .inner .m-wrap .m-nav > li .sub > li > a:hover {
+    color: #D40100;
+    text-decoration: underline;
+    transition: 0.5s;
+  }
+  header .inner .m-wrap .m-nav > .active > a {
+    display: block;
+    width: 100%;
+    background: url(../images/03-icon/caret-up.svg) no-repeat 95% center;
+  }
+}
+@media screen and (max-width: 767px) {
+  header .inner {
+    height: 60px;
+  }
+}
+header img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

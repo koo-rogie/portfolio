@@ -1,0 +1,216 @@
+.login-main-wrap {
+  padding: 100px 0px;
+}
+@media screen and (max-width: 600px) {
+  .login-main-wrap {
+    padding: 50px 15px;
+  }
+}
+
+.title-box {
+  text-align: center;
+}
+.title-box .title {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  color: #2B0200;
+  line-height: 1.5;
+}
+.title-box .sub-title {
+  display: block;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #000;
+}
+
+.login-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 10px;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}
+.login-inner .login-wrap {
+  text-align: center;
+  padding: 30px;
+}
+.login-inner .login-wrap > form .input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+.login-inner .login-wrap > form .input-group input {
+  width: 100%;
+  padding: 20px 20px;
+  border: none;
+  border-bottom: 1px solid #D72300;
+}
+.login-inner .login-wrap > form .input-group input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+@media screen and (max-width: 600px) {
+  .login-inner .login-wrap > form .input-group input {
+    font-size: 16px;
+  }
+}
+.login-inner .login-wrap > form .input-group .toggle-password {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  right: 15px;
+  top: 65%;
+}
+.login-inner .login-wrap > form .input-group .toggle-password .toggle-password-eye {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../images/icon/eye-down.svg) no-repeat center center;
+}
+.login-inner .login-wrap > form .input-group .toggle-password .toggle-password-eye.active {
+  background: url(../images/icon/eye-up.svg) no-repeat center center;
+}
+.login-inner .login-wrap > form .input-group .toggle-password .toggle-password-X {
+  width: 20px;
+  height: 20px;
+  background: url(../images/icon/x.svg) no-repeat center center;
+}
+.login-inner .login-wrap > form .input-group .toggle-password .toggle-password-X.hidden {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .login-inner .login-wrap > form .input-group {
+    margin-bottom: 10px;
+  }
+}
+.login-inner .login-wrap > form .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  height: 24px;
+  padding: 0 5px;
+}
+.login-inner .login-wrap > form .options label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.login-inner .login-wrap > form .options input {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+.login-inner .login-wrap > form .options input.active {
+  background-image: url(../images/icon/caret-down.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+}
+.login-inner .login-wrap > form .options a {
+  text-align: center;
+}
+.login-inner .login-wrap > form .login-btn {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px 0;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  cursor: pointer;
+}
+.login-inner .login-wrap > form .login-btn:hover {
+  background-color: #2B0200;
+  color: #fff;
+}
+@media screen and (max-width: 600px) {
+  .login-inner .login-wrap > form .login-btn {
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+}
+.login-inner .login-wrap > form .social-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.login-inner .login-wrap > form .social-login > button {
+  width: 33.3333333333%;
+  text-align: center;
+  border-radius: 40px;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.login-inner .login-wrap > form .social-login > button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 15px 10px;
+}
+.login-inner .login-wrap > form .social-login > button:nth-child(1) {
+  background-color: #03c75a;
+  color: #fff;
+}
+.login-inner .login-wrap > form .social-login > button:nth-child(2) {
+  background-color: #fae100;
+}
+.login-inner .login-wrap > form .social-login > button:hover {
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 600px) {
+  .login-inner .login-wrap > form .social-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .login-inner .login-wrap > form .social-login button {
+    width: 100%;
+  }
+}
+.login-inner .login-wrap > form .point-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.login-inner .login-wrap > form .point-line hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  border: 0;
+  background-color: #D72300;
+}
+.login-inner .login-wrap > form .signup-btn {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 40px;
+}
+.login-inner .login-wrap > form .signup-btn:hover {
+  background-color: #FF8233;
+  color: #fff;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+}
+.login-inner button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

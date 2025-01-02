@@ -1,0 +1,62 @@
+@use 'color' as *;
+
+@mixin flex($flex: flex, $space-between: space-between, $center: center, $gap: 0) {
+  display: $flex;
+  justify-content: $space-between;
+  align-items: $center;
+  gap: $gap;
+}
+
+@mixin font-s($display: block, $size: $font-default, $weigth: 400, $color: $bk) {
+  display: $display;
+  font-size: $size;
+  font-weight: $weigth;
+  color: $color;
+}
+
+@mixin box-s ($box-ss: 2px 4px 9px rgba(0, 0, 0, 0.1)) {
+  box-shadow: $box-ss ;
+}
+
+@mixin hover-text($main-color: $main-color-p) {
+  color: $main-color;
+  text-decoration: underline;
+}
+
+@mixin hover-back($main-color: $main-color-p) {
+  background-color: $main-color;
+  color: $wh;
+}
+
+@mixin res ($m-size) {
+  @media screen and (max-width:$m-size) {
+    @content;
+  }
+}
+
+@mixin border($color-b: $g555) {
+  border-top: 1px solid $color-b;
+  border-bottom: 1px solid $color-b;
+}
+
+@mixin border-r($b-r: 40px) {
+  border-radius: $b-r;
+}
+
+@mixin border-top($b-r: 150px 150px 10px 10px) {
+  border-radius: $b-r;
+  border: 1px solid $geee;
+}
+
+
+@mixin border-button($b-r: 5px 5px 50px 50px) {
+  border-radius: $b-r;
+  border: 1px solid $geee;
+}
+
+@mixin img-box () {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

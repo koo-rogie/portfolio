@@ -1,0 +1,92 @@
+body {
+  position: relative;
+}
+
+.popup-wrap {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+.popup-wrap .popup-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+.popup-wrap .popup-inner .title {
+  display: block;
+  font-size: 1.75em;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+.popup-wrap .popup-inner .sub-title {
+  display: block;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #000;
+  margin: 20px 0;
+}
+.popup-wrap .popup-inner .text {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+.popup-wrap .popup-inner .more-btn {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.popup-wrap .popup-inner strong {
+  display: inline-block;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #000;
+  width: 60px;
+}
+.popup-wrap .popup-inner .link-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.popup-wrap .popup-inner .link-list span a {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  border-radius: 40px;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+.popup-wrap .popup-inner .link-list span a:hover {
+  background-color: #D40100;
+  color: #fff;
+  transition: 0.5s;
+}
+.popup-wrap .popup-inner .close-wrap {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.popup-wrap .popup-inner .close-wrap p {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}

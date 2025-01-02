@@ -1,0 +1,78 @@
+@use 'mixin' as *;
+@use 'color' as *;
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    color: #000;
+}
+
+.main-slide {
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        right: 50px;
+
+        @include res($m-size: $res-ipad) {
+            right: 20px;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: 50px;
+
+        @include res($m-size: $res-ipad) {
+            left: 20px;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: $wh;
+    }
+
+    .main-silde-list {
+        display: block;
+
+        @include res($m-size: $res-ipad) {
+            display: none;
+        }
+
+    }
+
+    .main-silde-list-m {
+        display: none;
+
+        @include res($m-size: $res-ipad) {
+            display: block;
+        }
+
+    }
+
+    @include res($m-size: $res-ipad) {
+        height: 100vh;
+    }
+}

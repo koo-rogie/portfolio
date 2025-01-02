@@ -1,0 +1,224 @@
+@use 'mixin' as *;
+@use 'color' as *;
+
+
+.login-main-wrap {
+   padding: 100px 0px;
+
+   @include res($m-size: 600px) {
+      padding: 50px 15px;
+   }
+}
+
+.title-box {
+   text-align: center;
+
+   .title {
+      @include font-s($size: $font-large, $weigth: bold, $color: $main-color-b);
+      line-height: 1.5;
+   }
+
+   .sub-title {
+      @include font-s($size: $font-small);
+   }
+}
+
+.login-inner {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 30px 10px;
+   @include box-s();
+   @include border-r();
+
+   .login-wrap {
+      text-align: center;
+      padding: 30px;
+
+      >form {
+         .input-group {
+            @include flex();
+            flex-direction: column;
+            margin-bottom: 20px;
+            position: relative;
+
+            input {
+               width: 100%;
+               padding: 20px 20px;
+               border: none;
+               border-bottom: 1px solid $main-color-r;
+
+
+               &:-webkit-autofill {
+                  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+                  box-shadow: 0 0 0px 1000px white inset !important;
+                  transition: background-color 5000s ease-in-out 0s;
+               }
+
+               @include res($m-size: 600px) {
+                  font-size: 16px;
+               }
+            }
+
+            .toggle-password {
+               position: absolute;
+               @include flex($gap: 5px);
+               right: 15px;
+               top: 65%;
+
+               .toggle-password-eye {
+                  display: block;
+                  width: 24px;
+                  height: 24px;
+                  background: url(../images/icon/eye-down.svg) no-repeat center center;
+
+                  &.active {
+                     background: url(../images/icon/eye-up.svg) no-repeat center center;
+                  }
+
+               }
+
+               .toggle-password-X {
+                  width: 20px;
+                  height: 20px;
+                  background: url(../images/icon/x.svg) no-repeat center center;
+
+                  &.hidden {
+                     display: none;
+                  }
+               }
+
+
+            }
+
+            @include res($m-size: 600px) {
+               margin-bottom: 10px;
+            }
+         }
+
+         .options {
+            @include flex();
+            height: 24px;
+            padding: 0 5px;
+
+
+            label {
+               @include flex($gap: 10px);
+               cursor: pointer;
+
+            }
+
+            input {
+               // background-color: $main-color-p;
+               width: 24px;
+               height: 24px;
+               border: 1px solid #eee;
+               cursor: pointer;
+
+               &.active {
+                  background-image: url(../images/icon/caret-down.svg);
+                  background-repeat: no-repeat;
+                  background-position: center center;
+                  background-size: 50%;
+               }
+            }
+
+            a {
+               text-align: center;
+            }
+         }
+
+         .login-btn {
+            width: 100%;
+            margin: 20px 0;
+            padding: 20px 0;
+            @include box-s();
+            @include border-r();
+            cursor: pointer;
+
+            &:hover {
+               @include hover-back($main-color: $main-color-b);
+            }
+
+            @include res($m-size: 600px) {
+               margin: 10px 0;
+               padding: 10px 0;
+            }
+         }
+
+         .social-login {
+            @include flex($gap: 5px);
+
+            >button {
+               width: calc(100% / 3);
+               text-align: center;
+               @include border-r();
+               @include font-s($weigth: bold);
+
+               a {
+                  @include flex($space-between: center);
+                  padding: 15px 10px;
+               }
+
+               &:nth-child(1) {
+                  background-color: #03c75a;
+                  color: #fff
+               }
+
+               &:nth-child(2) {
+                  background-color: #fae100;
+               }
+
+               &:hover {
+                  @include box-s();
+               }
+            }
+
+            @include res($m-size: 600px) {
+               @include flex($gap: 10px);
+
+               flex-direction: column;
+               width: 100%;
+
+               button {
+                  width: 100%;
+               }
+            }
+         }
+
+         .point-line {
+            @include flex($gap: 40px);
+
+            hr {
+               display: block;
+               width: 100%;
+               height: 1px;
+               margin: 30px 0;
+               border: 0;
+               background-color: $main-color-r;
+            }
+         }
+
+         .signup-btn {
+            width: 100%;
+            padding: 15px 0;
+            @include border-r();
+
+            &:hover {
+               @include hover-back();
+               @include box-s();
+
+            }
+         }
+
+      }
+   }
+
+   button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+   }
+
+
+}

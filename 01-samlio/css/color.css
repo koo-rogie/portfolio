@@ -1,0 +1,31 @@
+  .charhter-wrap .icon-box .icon-list>li:first-child {
+      left: 160px;
+      top: 100px;
+  }
+
+  .charhter-wrap .icon-box .icon-list>li:nth-child(2) {
+      right: 100px;
+      top: 100px;
+  }
+
+  .charhter-wrap .icon-box .icon-list>li:nth-child(3) {
+      right: 10%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+  }
+
+  .charhter-wrap .icon-box .icon-list>li:nth-child(4) {
+      left: 150x;
+      bottom: 230px;
+  }
+
+
+  .charhter-wrap .icon-box .icon-list>li:nth-child(5) {
+      right: 100px;
+      bottom: 100px;
+  }
+
+  .charhter-wrap .icon-box .icon-list>li:last-child {
+      left: 100px;
+      bottom: 75px;
+  }

@@ -1,0 +1,738 @@
+/* swiper */
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.container .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .mySwiper2 {
+    height: 80%;
+    width: 100%;
+}
+
+.container .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.container .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.container .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+
+/* 변경한 부분 */
+/* 공통사항 */
+.container section {
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.container .title-box {
+    margin-bottom: 30px;
+}
+
+.container .title-box .sub-title,
+.music-right .sub-title {
+    color: #df3c39;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.container .title-box .title,
+.music-right .title {
+    font-size: 2.5em;
+}
+
+.container .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .more>a {
+    display: inline-block;
+    border: 1px solid #df3c39;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+.container .more>a:hover {
+    background-color: #df3c39;
+    color: #fff;
+}
+
+/* 아티스트 */
+.introduction-wrap .tab-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.introduction-wrap .tab-list>li {
+    width: 30%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.introduction-wrap .tab-list>li .img-box {
+    overflow: hidden;
+}
+
+.introduction-wrap .tab-list>li .img-box img,
+.introduction-wrap .sns-list>li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.introduction-wrap .text-box {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.introduction-wrap .text-box h2 {
+    font-size: 2.25em;
+    line-height: 1.5;
+}
+
+.introduction-wrap .text-box span {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.096);
+    text-align: center;
+}
+
+.introduction-wrap .sns-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.introduction-wrap .sns-list>li {
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 8px;
+}
+
+/* 뮤직비디오 */
+.music-video-wrap {
+    background-color: #111;
+    height: 700px;
+}
+
+.music-video-wrap>.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    gap: 50px;
+}
+
+.music-video-wrap>.inner>.music-left {
+    width: 40%;
+    height: 100%;
+}
+
+.music-video-wrap>.inner>.music-right {
+    width: 60%;
+    height: 100%;
+    background-color: #111;
+    color: #fff;
+}
+
+.music-right>.swiper-text {
+    height: 70%;
+}
+
+.music-right>.music-video-swiper1 {
+    height: 30%;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+    color: #fff;
+}
+
+.music-video-wrap .swiper-slide {
+    background-color: #111;
+}
+
+.music-video-wrap .swiper-slide>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.music-video-wrap .swiper-slide-next,
+.music-video-wrap .swiper-slide-fully-visible,
+.music-video-wrap .swiper-slide-visible {
+    position: relative;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.music-video-wrap .swiper-slide-thumb-active {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.music-video-wrap .swiper-slide-thumb-active img {
+    border-bottom: 5px solid #fff;
+
+}
+
+.music-video-wrap .swiper-slide>div .title {
+    margin: 15px 0;
+    font-size: 3em;
+
+}
+
+.music-video-wrap .swiper-slide>div .sub {
+    margin-bottom: 40px;
+    font-size: 1.25em;
+}
+
+/* 노래 */
+.sing-wrap {
+    overflow: hidden;
+}
+
+.sing-wrap .tap-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.sing {
+    width: 55%;
+}
+
+.sing-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.sing-list li {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    padding: 25px 30px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.158);
+    cursor: pointer;
+}
+
+.sing-list li .text-box {
+    display: none;
+}
+
+.sing-list .active .text-box {
+    display: block;
+}
+
+.sing-list>li .img-title-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+
+.sing-list>li .img-title-box:hover,
+.sing-list .active .img-title-box span {
+    color: #df3c39;
+}
+
+.sing-list>li .img-title-box .img-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.sing-list>li .img-title-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-title-box span {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.sing-list .text-box h3 {
+    color: #df3c39;
+    font-size: 1.25em;
+    margin-top: 20px;
+}
+
+.sing-list .text-box p {
+    padding: 20px 0;
+}
+
+.sing-list .text-box .sing-more a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #df3c39;
+    border-radius: 10px;
+}
+
+.sing-list .text-box .sing-more a:hover {
+    background-color: #df3c39;
+    color: #fff;
+}
+
+.sing-img-wrap {
+    width: 30%;
+    height: 100%;
+}
+
+.sing-img-list {
+    height: 100vh;
+    position: relative;
+}
+
+.sing-img-list>li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s linear;
+}
+
+.sing-img-list>.active {
+    opacity: 1;
+}
+
+
+.sing-img-list>li>a .img-box {
+    position: relative;
+    margin-top: -90px;
+}
+
+.sing-img-list>li>a .img-box .small {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.sing-img-list>li>a .img-box .small img {
+    display: block;
+    width: 600px;
+    object-fit: cover;
+    transform: rotate(360deg);
+    transition: 1s 0.5s;
+}
+
+.sing-img-list>.active>a .img-box .small img {
+    transform: rotate(0deg);
+}
+
+.sing-img-list>li>a .img-box .big {
+    position: relative;
+    right: -100%;
+}
+
+.sing-img-list>li>a .img-box .big img {
+    display: block;
+    max-width: none;
+    height: 90vh;
+    object-fit: cover;
+    border-radius: 30px 0px 0px 30px;
+}
+
+/* 공지사항 */
+
+.notice-wrap .tab-title {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.notice-wrap .tab-title>.active>a,
+.notice-wrap .tab-title>li>a:hover {
+    background-color: #df3c39;
+    color: #fff;
+}
+
+.notice-wrap .tab-title>li>a {
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #df3c39;
+    border-radius: 50px;
+}
+
+.notice-wrap .tab-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.notice-wrap .tab-list>li {
+    width: 25%;
+    padding: 10px;
+    border-top: 1px solid #df3c39;
+    border-bottom: 1px solid #df3c39;
+    position: relative;
+}
+
+.notice-wrap .tab-list>li>a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 30px 0;
+}
+
+.notice-wrap .tab-list .sub-title {
+    font-weight: bold;
+    color: #df3c39;
+}
+
+.notice-wrap .tab-list .title {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.notice-wrap .tab-list span {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    font-size: 1.25em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.notice-wrap .tab-list .more-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    transition: 0.5s;
+}
+
+.notice-wrap .tab-list .more-btn:hover {
+    transform: rotate(180deg);
+}
+
+.more {
+    margin: 50px 0;
+}
+
+.contact-us-wrap {
+    text-align: center;
+    background: #000000 url(../images/main/container/led.jpg) no-repeat center center;
+    background-size: 100%;
+    backdrop-filter: brightness(50%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-us-wrap::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: 0.85;
+    z-index: -1;
+
+}
+
+.contact-us-wrap .inner{
+    z-index: 10;
+}
+
+.contact-us-wrap a {
+    color: #fff;
+    z-index: 1;
+}
+
+.contact-us-wrap .text {
+    font-size: 4em;
+    z-index: 1;
+
+}
+
+@media screen and (max-width:1279px) {
+    .container section {
+        padding: 30px 0;
+    }
+
+    .container .title-box {
+        margin-bottom: 20px;
+    }
+
+    .container .more {
+        margin: 30px 0 50px;
+    }
+
+    /* 아티스트 */
+    .introduction-wrap .tab-list {
+        gap: 10px;
+    }
+
+    .introduction-wrap .text-box h2 {
+        line-height: 1;
+    }
+
+    .introduction-wrap .sns-list {
+        gap: 5px;
+    }
+
+    .introduction-wrap .sns-list>li {
+        width: 24px;
+        height: 24px;
+        padding: 5px;
+    }
+
+    /* 뮤직비디오 */
+
+    /* 노래 */
+    .sing-wrap .tap-box {
+        gap: 220px;
+    }
+
+    .sing-list li {
+        padding: 20px 30px;
+    }
+
+    .sing-img-list>li>a .img-box .big img {
+        height: 85vh;
+    }
+
+
+    /* 공지사항 */
+    .notice-wrap .tab-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .notice-wrap .tab-list>li {
+        width: 45%;
+    }
+
+    .notice-wrap .tab-list>li>a {
+        padding: 20px 0 30px;
+    }
+
+    /* 오디션 */
+    .contact-us-wrap span {
+        font-size: 4em;
+        bottom: -5%;
+    }
+}
+
+@media screen and (max-width:797px) {
+
+    /* 아티스트 */
+    .introduction-wrap .tab-list {}
+
+    .introduction-wrap .tab-list>li {
+        width: 45%;
+    }
+
+    /* 뮤직비디오 */
+    .music-video-wrap>.inner {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .music-video-wrap>.inner>.music-right,
+    .music-video-wrap>.inner>.music-left {
+        width: 100%;
+    }
+
+    .music-video-wrap>.inner>.music-left {
+        height: 250px;
+    }
+
+    .music-right>.swiper-text {
+        margin-bottom: 30px;
+    }
+
+    .music-video-wrap .swiper-slide>div .title {
+        margin: 5px 0;
+    }
+
+    .music-video-wrap .swiper-slide>div .sub {
+        margin-bottom: 20px;
+    }
+
+    .music-video-wrap .swiper-slide>div span {
+        display: inline;
+        text-align: left;
+    }
+
+    /* 노래 */
+    .sing {
+        width: 70%;
+    }
+
+    .sing-wrap .tap-box {
+        gap: 0px;
+    }
+
+    .sing-img-list {
+        height: 650px;
+    }
+
+    .sing-img-list>li {
+        top: 50%;
+        left: 50%;
+    }
+
+    .sing-img-list>li>a .img-box .small {
+        position: sticky;
+    }
+
+    .sing-img-list>li>a .img-box .big {
+        display: none;
+        opacity: 0;
+    }
+
+    /* 공지사항 */
+    .notice-wrap .tab-title {
+        /* gap: 10px; */
+    }
+
+    /* 오디션 */
+    .contact-us-wrap .text {
+        font-size: 3em;
+    }
+
+    .contact-us-wrap span {
+        font-size: 3em;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .sing {
+        width: 100%;
+    }
+
+    .sing-img-wrap {
+        display: none;
+    }
+
+    .notice-wrap .tab-title {
+        justify-content: space-between;
+    }
+
+}
+
+/* @media screen and (max-width:500px) {} */
+
+@media screen and (max-width:500px) {
+
+    /* 아티스트 */
+    .introduction-wrap .tab-list>li {
+        width: 100%;
+    }
+
+    /* 뮤직비디오 */
+
+    /* 노래 */
+    .sing {
+        width: 100%;
+    }
+
+    .sing-img-wrap {
+        display: none;
+    }
+
+    /* 공지사항 */
+
+    /* 오디션 */
+
+}

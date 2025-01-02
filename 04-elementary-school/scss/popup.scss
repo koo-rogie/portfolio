@@ -1,0 +1,78 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+body {
+    position: relative;
+}
+
+.popup-wrap {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: $wh;
+    @include border-r();
+    @include box-s();
+    z-index: 999;
+
+    .popup-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+
+        .title {
+            @include font-s($size: $font-medium, $weigth: bold);
+            text-align: center;
+        }
+
+        .sub-title {
+            @include font-s($size: $font-small);
+            margin: 20px 0;
+        }
+
+        .text {
+            @include font-s();
+        }
+
+        .more-btn {
+            @include font-s();
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        strong {
+            @include font-s($display: inline-block, $size: $font-small, $weigth: bold);
+            width: 60px;
+        }
+
+        .link-list {
+            @include flex($space-between: center, $gap: 10px);
+            span{
+                a{
+                    @include font-s();
+                    @include border-r();
+                    @include box-s();
+                    padding: 10px 20px;
+                    margin: 10px 0;
+                    &:hover{
+                        @include hover-back($main-color:$main-color-r);
+                    }
+
+                }
+            }
+        }
+
+        .close-wrap {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            @include flex($gap: 20px);
+
+            p {
+                @include font-s();
+            }
+        }
+    }
+}

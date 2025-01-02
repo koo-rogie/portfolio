@@ -1,0 +1,249 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+html,
+body {
+   position: relative;
+   height: 100%;
+}
+
+body {
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+.main-wrap {
+   ::selection {
+      color: #000;
+   }
+
+   .swiper {
+      width: 100%;
+      height: 100%;
+   }
+
+   .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.main-wrap {
+   position: relative;
+   height: 100vh;
+   background-color: rgba(165, 21, 21, 0.3);
+   padding-top: 100px;
+
+   .inner {
+      @include flex($gap: 30px);
+      height: 100%;
+
+      @include res($m-size: $res-mobile) {
+         flex-direction: column;
+      }
+
+      >.text-box {
+         @include flex-cal($space-between: center, $gap: 30px);
+         width: 100%;
+         height: 100%;
+         padding-left: 50px;
+
+         @include res($m-size: $res-mobile) {
+            padding-left: 10px;
+
+         }
+
+         .title,
+         .sub-title {
+            color: $wh;
+         }
+
+         .arrow-btn {
+            a {
+               @include flex();
+               @include box-s();
+               @include border-r();
+               border: 1px solid $wh;
+               padding: 10px 20px;
+               transition: 0.5s;
+
+               span {
+                  @include font($size: $font-medium, $weigth: bold, $color: $wh);
+               }
+
+               .arrow-img-box {
+                  display: block;
+                  width: 50px;
+                  height: 10px;
+                  background: url(../images/04-icon/arrow-wh.svg) no-repeat center center;
+               }
+
+               &:hover {
+                  background-color: $wh;
+                  margin-left: 50px;
+
+                  span {
+                     color: #000;
+                  }
+
+                  .arrow-img-box {
+                     display: block;
+                     width: 50px;
+                     height: 10px;
+                     background: url(../images/04-icon/arrow-left.svg) no-repeat center center;
+                  }
+               }
+            }
+         }
+
+         .main-icon-list {
+            @include flex($center: flex-end);
+            width: 100%;
+
+            li {
+               width: 20%;
+               background-color: $wh;
+               overflow: hidden;
+
+               a {
+                  @include flex-cal($center: center);
+                  padding: 10px;
+                  height: 200px;
+                  transition: 0.5s;
+
+                  .img-box {
+                     overflow: hidden;
+                     @include border-r();
+                     width: 100px;
+                     height: 100px;
+                  }
+
+                  .text-box {
+                     @include font($size: $font-small, $weigth: bold);
+                  }
+
+                  .arrow-btn {
+                     display: none;
+                  }
+
+                  &:hover {
+                     height: 250px;
+
+                     .arrow-btn {
+                        display: block;
+                     }
+                  }
+               }
+
+               &:nth-child(2n+1) {
+                  @include border-r(40px 100px 40px 100px);
+
+                  &:hover {
+                     background-color: $main-color-b;
+
+                     .text-box {
+                        color: $wh;
+                     }
+                  }
+
+               }
+
+               &:nth-child(2n) {
+                  @include border-r(100px 40px 100px 40px);
+
+                  &:hover {
+                     background-color: $main-color-y;
+
+                  }
+               }
+            }
+
+         }
+      }
+
+      >.img-box {
+         width: 30%;
+         height: 80vh;
+         z-index: 1001;
+
+         @include res($m-size: $res-mobile) {
+            width: 100%;
+            height: 45vh;
+            margin-bottom: 50px
+         }
+
+         .main-img-list {
+            .swiper-slide {
+               @include border-r(40px 200px 40px 200px);
+               overflow: hidden;
+               height: 100%;
+
+               @include res($m-size: $res-mobile) {
+                  @include border-r(40px 100px 40px 100px);
+
+               }
+
+               img,
+               video {
+                  @include img-box();
+               }
+            }
+         }
+      }
+   }
+
+   .back-video {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include img-box();
+      z-index: -1;
+   }
+
+   // 눈송이 컨테이너
+   .snow-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      /* 사용자 인터랙션 방지 */
+      z-index: 1000;
+      overflow: hidden;
+   }
+
+   // 눈송이 스타일 
+   .snowflake {
+      position: absolute;
+      top: -10px;
+      color: white;
+      font-size: 12px;
+      opacity: 0.8;
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+      transition: transform 0.2s ease;
+
+      &.stacked {
+         transition: opacity 1s ease-out;
+         /* 서서히 사라지는 효과 */
+      }
+
+      @include res($m-size: $res-mobile) {
+         font-size: 10px
+      }
+   }
+
+   img {
+      @include img-box();
+   }
+}

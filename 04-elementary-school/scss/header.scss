@@ -1,0 +1,329 @@
+@use 'color' as *;
+@use 'mixin' as *;
+
+header {
+    position: relative;
+
+    .inner {
+        @include flex();
+        height: 100px;
+
+        @include res($m-size: $res-ipad) {
+            height: 80px;
+        }
+
+        .logo {
+            width: 200px;
+            min-width: 100px;
+
+            @include res($m-size: $res-ipad) {
+                width: 150px;
+            }
+
+            @include res($m-size: $res-mobile) {
+                width: 100px;
+            }
+        }
+
+        .nav {
+            @include flex($gap: 20px);
+
+            @include res($m-size: $res-ipad) {
+                display: none;
+            }
+
+            >li {
+                >a {
+                    @include font-s($size: $font-small, $weigth: 500);
+
+                    &:hover {
+                        @include hover-text();
+                    }
+                }
+
+                .sub-wrap {
+                    display: none;
+                    position: absolute;
+                    left: 50%;
+                    top: 80px;
+                    transform: translateX(-50%);
+                    width: 90%;
+                    height: 500px;
+                    z-index: 1000;
+                    background-color: $wh;
+                    @include box-s();
+                    @include border-r($b-r: 0 0 40px 40px);
+
+                    .sub-list {
+                        // position: absolute;
+                        @include flex($space-between: center, $center: flex-start, $gap: 20px);
+
+
+
+                        padding: 50px;
+
+                        .sub {
+                            @include flex($space-between: flex-start, $center: flex-start, $gap: 30px);
+                            flex-wrap: wrap;
+                            width: 100%;
+                            margin: 0 auto;
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                right: -0px;
+                                top: -50px;
+                                // transform: translateX(-50%);
+                                width: 50px;
+                                height: 500px;
+                                background: $main-color-r;
+                                z-index: -1;
+                            }
+
+                            &::after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                right: -100px;
+                                top: -50px;
+                                width: 50px;
+                                height: 200px;
+                                background: $main-color-y;
+                                @include border-r($b-r: 0 0 40px 0);
+                                z-index: -1;
+                            }
+
+                            >li {
+                                width: 20%;
+                                height: 30%;
+
+                                >a {
+                                    @include font-s($size: $font-small, $weigth: 500);
+                                    padding: 10px 20px;
+                                    border: 1px solid black;
+                                    background-color: $wh;
+
+                                    &:hover {
+                                        @include hover-text();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .gnb-list {
+            @include flex($gap: 30px);
+
+            @include res($m-size: $res-ipad) {
+                display: none;
+            }
+
+            >li {
+                position: relative;
+                z-index: 1000;
+
+                >a {
+                    @include font-s();
+                    padding: 10px;
+                }
+
+                ul {
+                    display: none;
+                    position: absolute;
+                    left: 50%;
+                    top: 50px;
+                    transform: translateX(-50%);
+                    background: $wh;
+                    @include box-s();
+
+                    li {
+                        width: 100%;
+
+                        a {
+                            @include font-s();
+                            text-align: center;
+                            padding: 20px 10px;
+                        }
+                    }
+                }
+            }
+
+            .lang-wrap {
+                a {
+                    @include flex();
+
+                    span {
+                        @include arrow();
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    &.active {
+                        span {
+                            @include arrow-active();
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                    &:hover {
+                        @include hover-text();
+                    }
+                }
+
+
+                .lang-list {
+                    top: 42px;
+                    width: 100%;
+
+                    a {
+                        @include flex($space-between: center);
+                        text-align: center;
+                    }
+                }
+            }
+
+            .person-wrap {
+                ul {
+                    top: 42px;
+
+                    li {
+                        a {
+
+                            &:hover {
+                                @include hover-text();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .m-wrap,
+        .ham-btn {
+            display: none;
+        }
+    }
+
+    @include res($m-size: $res-ipad) {
+        .inner {
+
+            .m-wrap,
+            .ham-btn {
+                display: block;
+            }
+
+            .ham-btn {
+                a {
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .m-wrap {
+                position: fixed;
+                display: block;
+                width: 70%;
+                height: 100vh;
+                left: -100%;
+                top: 0;
+                overflow-y: scroll;
+                background-color: $wh;
+                z-index: 1000000;
+
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: #eee;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: $main-color-r;
+                    border-radius: 10px;
+                }
+
+                .close-btn {
+                    position: absolute;
+                    right: 10px;
+                    top: 30px;
+
+                    @include res($m-size: $res-mobile) {
+                        top: 14px;
+                    }
+
+                    a {
+                        display: block;
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+
+                .m-nav {
+                    padding-top: 80px;
+
+                    @include res($m-size: $res-mobile) {
+                        padding-top: 60px;
+                    }
+
+                    >li {
+
+                        @include border();
+
+                        >a {
+                            display: block;
+                            width: 100%;
+                            background: url(../images/03-icon/caret-down.svg) no-repeat 95% center;
+                            @include font-s($size: $font-small-m, $weigth: bold);
+                            padding: 10px 20px;
+
+                            &:hover {
+                                @include hover-text();
+                            }
+                        }
+
+                        .sub {
+                            display: none;
+
+                            >li {
+                                >a {
+                                    @include font-s();
+                                    padding: 10px 30px;
+
+                                    &:hover {
+                                        @include hover-text();
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    >.active {
+                        >a {
+                            display: block;
+                            width: 100%;
+                            background: url(../images/03-icon/caret-up.svg) no-repeat 95% center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include res($m-size: $res-mobile) {
+        .inner {
+            height: 60px;
+        }
+    }
+
+    img {
+        @include img-box();
+    }
+}
