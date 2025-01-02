@@ -202,9 +202,11 @@
   flex-direction: column;
   padding: 20px;
   position: relative;
+  transition: 0.2s;
 }
 .pp-wrap .inner .pp-list li a .img-box {
   height: 300px;
+  overflow: hidden;
 }
 .pp-wrap .inner .pp-list li a .img-box img {
   display: block;
@@ -225,7 +227,14 @@
 }
 .pp-wrap .inner .pp-list li a .arrow-btn {
   position: absolute;
-  right: 30px;
+  right: 60px;
   bottom: 30px;
   width: 30px;
+  transition: 0.2s;
+}
+.pp-wrap .inner .pp-list li a:hover {
+  transform: scale(1.1);
+}
+.pp-wrap .inner .pp-list li a:hover .arrow-btn {
+  right: 30px;
 }

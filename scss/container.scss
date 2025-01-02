@@ -228,9 +228,11 @@
                flex-direction: column;
                padding: 20px;
                position: relative;
+               transition: 0.2s;
 
                .img-box {
                   height: 300px;
+                  overflow: hidden;
 
                   img {
                      display: block;
@@ -251,14 +253,24 @@
 
                .arrow-btn {
                   position: absolute;
-                  right: 30px;
+                  right: 60px;
                   bottom: 30px;
                   width: 30px;
+                  transition: 0.2s;
+
+               }
+
+               &:hover {
+                  transform: scale(1.1);
+
+                  .arrow-btn {
+                     right: 30px;
+                  }
                }
             }
          }
       }
 
-   
+
    }
 }
