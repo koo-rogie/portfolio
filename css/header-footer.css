@@ -3,6 +3,7 @@
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 10000;
 }
 .header-wrap header {
   height: 100%;
@@ -33,6 +34,6 @@
   transition: 0.2s;
 }
 .header-wrap header .inner .nav-list li a:hover {
-  background-color: pink;
+  background-color: skyblue;
   border-radius: 40px;
 }

@@ -1,15 +1,22 @@
 .main-wrap {
   height: 100vh;
   padding-top: 100px;
-  background-color: pink;
+  background-color: #FFAEAE;
   z-index: -1;
 }
 .main-wrap .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
   position: relative;
 }
 .main-wrap .inner .main-img {
   width: 500px;
   z-index: 2;
+}
+.main-wrap .inner .main-img img {
+  margin: 50px;
 }
 .main-wrap .inner::after {
   display: block;
@@ -20,5 +27,42 @@
   background-color: #fff;
   width: 600px;
   height: 600px;
+  border-radius: 10000px;
   z-index: 0;
+}
+.main-wrap .inner .text-box {
+  position: absolute;
+  left: 650px;
+  top: 25%;
+  transform: translateY(-50%);
+  padding-right: 100px;
+}
+.main-wrap .inner .text-box .sub-title {
+  display: block;
+  font-size: 5em;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 50px;
+}
+.main-wrap .inner .text-box .text-title {
+  display: block;
+  font-size: 3em;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+  line-height: 2;
+}
+.main-wrap .inner .text-box .text-title::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.main-wrap .inner .text-box .text-title:last-child {
+  text-align: right;
+}
+.main-wrap .inner .text-box .text-title:last-child::after {
+  display: none;
 }

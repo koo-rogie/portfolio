@@ -4,16 +4,20 @@
 .main-wrap {
    height: 100vh;
    padding-top: 100px;
-   background-color: pink;
+   background-color: #FFAEAE;
    z-index: -1;
 
    .inner {
+      @include flex();
       position: relative;
 
       .main-img {
          width: 500px;
-
          z-index: 2;
+
+         img {
+            margin: 50px;
+         }
 
       }
 
@@ -24,7 +28,40 @@
          background-color: $wh;
          width: 600px;
          height: 600px;
+         @include border-r($b-r: 10000px);
          z-index: 0;
+      }
+
+      .text-box {
+         position: absolute;
+         left: 650px;
+         top: 25%;
+         transform: translateY(-50%);
+         padding-right: 100px;
+
+         .sub-title {
+            @include font-s($size: 5em, $weigth: bold);
+            margin-bottom: 50px;
+         }
+
+         .text-title {
+            @include font-s($size: 3em, $weigth: bold);
+            position: relative;
+            line-height: 2;
+            &::after{
+               @include a-b();
+               width: 100%;
+               height: 2px;
+               background-color: $wh;
+
+            }
+            &:last-child{
+               text-align: right;
+               &::after{
+                  display: none;
+               }
+            }
+         }
       }
    }
 }

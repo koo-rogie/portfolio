@@ -6,6 +6,7 @@
    left: 0;
    top: 0;
    width: 100%;
+   z-index: 10000;
    
    header {
       height: 100%;
@@ -28,7 +29,7 @@
                   padding: 10px;
                   transition: 0.2s;
                   &:hover{
-                     background-color: pink;
+                     background-color: skyblue;
                      @include border-r();
                   }
                }
