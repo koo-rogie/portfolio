@@ -3,11 +3,6 @@
   padding-top: 100px;
   background-color: #FFAEAE;
   z-index: -1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .main-wrap .inner {
   display: flex;
@@ -126,4 +121,11 @@
 }
 .main-wrap .inner .text-box .text-title:last-child::after {
   display: none;
+}
+.main-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }

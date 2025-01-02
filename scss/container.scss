@@ -216,11 +216,24 @@
 }
 
 .pp-wrap {
+   overflow: hidden;
+
    .inner {
+      @include flex();
+      flex-direction: column;
+
       .pp-list {
          display: grid;
          grid-template-columns: repeat(3, 1fr);
          text-align: center;
+
+         @include res($m-size: $res-ipad) {
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+         @include res($m-size: $res-mobile-m) {
+            grid-template-columns: repeat(1, 1fr);
+         }
 
          li {
             a {
@@ -271,6 +284,26 @@
          }
       }
 
+      .more-btn {
+         margin-top: 20px;
+
+         a {
+            display: inline-block;
+            padding: 10px 20px;
+            @include box-s();
+            @include border-r();
+            @include font-s($display: inline-block, $size: $font-small);
+            text-align: center;
+            transition: 0.5s;
+            border: 1px solid #073A53;
+
+            &:hover {
+               background-color: #073A53;
+               @include font-s($display: inline-block, $size: $font-small, $weigth: bold, $color: $wh);
+
+            }
+         }
+      }
 
    }
 }

@@ -114,5 +114,8 @@
       }
    }
 
-   @include img();
+   img {
+      @include img();
+
+   }
 }
