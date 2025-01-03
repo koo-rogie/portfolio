@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 .header-wrap {
   position: fixed;
   left: 0;

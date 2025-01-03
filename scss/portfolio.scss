@@ -1,3 +1,25 @@
 @use 'mixin' as *;
 @use 'color' as *;
+// html{
+//    overflow-y: scroll;
+// }
+.main {
+   background-color: pink;
+   position: relative;
+   .inner{
+      .main-title{
+         text-align: center;
+         padding: 50px 0;
+         color: #fff;
+      }
+   }
+   &::after{
+      @include a-b();
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.2);
 
+   }
+}

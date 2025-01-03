@@ -1,6 +1,8 @@
 @use 'mixin' as *;
 @use 'color' as *;
-
+body{
+   position: relative;
+}
 .header-wrap {
    position: fixed;
    left: 0;

@@ -1,0 +1,19 @@
+.main {
+  background-color: pink;
+  position: relative;
+}
+.main .inner .main-title {
+  text-align: center;
+  padding: 50px 0;
+  color: #fff;
+}
+.main::after {
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
