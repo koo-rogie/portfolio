@@ -1,0 +1,91 @@
+@use 'mixin' as *;
+@use 'color' as *;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: #000;
+}
+
+img,
+video,
+iframe {
+   vertical-align: middle;
+   max-width: 100%;
+}
+
+address,
+i,
+em {
+   font-style: normal;
+}
+
+.blind {
+   position: absolute;
+   top: -99999999999999999999999999999999999999999px;
+}
+
+.flex {
+   display: flex;
+}
+
+body {
+   font-family: "Pretendard", sans-serif;
+   font-size: 16px;
+   color: #000;
+   word-break: keep-all;
+}
+
+.inner {
+   max-width: 1300px;
+   margin: 0 auto;
+}
+
+input,
+textarea,
+button {
+   appearance: none;
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   border-radius: 0;
+   -moz-border-radius: 0;
+   -webkit-border-radius: 0;
+}
+.sub-title{
+   @include font-s($size: $font-small);
+
+}
+.text-title {
+   @include font-s();
+}
+
+@media screen and (max-width:1720px) {
+   .inner {
+      padding: 0 10px;
+   }
+}
+
+@media screen and (max-width:1279px) {
+   body {
+      font-size: 14px;
+   }
+
+   .inner {
+      padding: 0 20px;
+   }
+}
+
+@media screen and (max-width:797px) {
+   body {
+      font-size: 12px;
+   }
+}
