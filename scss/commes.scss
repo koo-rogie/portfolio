@@ -60,10 +60,12 @@ button {
    -moz-border-radius: 0;
    -webkit-border-radius: 0;
 }
-.sub-title{
+
+.sub-title {
    @include font-s($size: $font-small);
 
 }
+
 .text-title {
    @include font-s();
 }
