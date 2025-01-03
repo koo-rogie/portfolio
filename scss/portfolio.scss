@@ -1,19 +1,20 @@
 @use 'mixin' as *;
 @use 'color' as *;
-// html{
-//    overflow-y: scroll;
-// }
+
 .main {
-   background-color: pink;
    position: relative;
-   .inner{
-      .main-title{
+   margin-top: 100px;
+   background-color: pink;
+
+   .inner {
+      .main-title {
          text-align: center;
-         padding: 50px 0;
+         padding: 40px 0;
          color: #fff;
       }
    }
-   &::after{
+
+   &::after {
       @include a-b();
       left: 0;
       top: 0;
